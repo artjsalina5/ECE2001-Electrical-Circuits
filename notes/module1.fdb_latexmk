@@ -1,0 +1,13 @@
+# Fdb version 4
+["pdflatex"] 1737484966.40562 "module1.tex" "module1.pdf" "module1" 1737484966.52889 2
+  "/etc/texmf/web2c/texmf.cnf" 1736425393.13134 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736425431 8243100 edbb655ced075bcd82e8ab4092f92bd7 ""
+  "module1.aux" 1737484966.40364 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "module1.tex" 1737484885.18417 0 d41d8cd98f00b204e9800998ecf8427e ""
+  (generated)
+  "module1.aux"
+  "module1.log"
+  "module1.pdf"
+  (rewritten before read)

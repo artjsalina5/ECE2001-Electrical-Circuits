@@ -1,0 +1,90 @@
+% TEX compiler = luatex
+% copyright arturo salinas-aguayo 2025
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{circuitikz}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{karnaugh-map}
+\usepackage{bm}
+\usepackage{float}
+
+\geometry{letterpaper, margin=1in}
+\graphicspath{ {../../images/} }
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ECE 2001 - Module 1: Circuit Theory}
+\fancyhead[R]{\thepage}
+\setlength{\headheight}{15pt}
+
+\author{Arturo Salinas-Aguayo}
+\title{Module 1: Circuit Theory}
+% theorem set
+\newtheorem{example}{Example}
+% Example block environment
+\newenvironment{examp}
+{\vspace{0.5cm}
+ \hrule
+\vspace{0.5cm}
+\begin{example}}
+{\hrule
+\vspace{0.5cm}
+\end{example}}
+
+\begin{document}
+\newcommand{\closure}[2][3]{%
+	{}\mkern#1mu\overline{\mkern-#1mu#2}}
+\newcommand\ncoverline[1]{\mkern1mu\overline{\mkern-1mu#1\mkern-1mu}\mkern1mu}
+% Title Page
+\begin{titlepage}
+	\centering
+	\vspace*{3cm}
+	\huge\textbf{Module 1: Circuit Theory }\\
+	\vspace{5cm}
+	\Large\textbf{Arturo Salinas-Aguayo}\\
+	\normalsize
+	ECE 2001 Electrical Circuits\\
+	Dr. David J. Giblin, Section 331.660.701.810-1253\\
+	Mechanical Engineering Department
+	\vfill
+	\includegraphics[scale=0.1]{uconnlogo}\\
+	College of Engineering, University of Connecticut\\
+	\scriptsize{Coded in \LaTeX}
+	\vspace*{1cm}
+\end{titlepage}
+\section*{Basic Concepts}
+\subsection*{Assumptions}
+\begin{itemize}
+	\item \textbf{Lumped Parameter System}
+
+	      In a system that is small enough to make the assumption that Electrical
+	      effects happen instantaneously through the system.
+	      \begin{examp}
+		      \[
+			      \lambda>>L \]
+		      \[
+			      \lambda = \frac{c}{f} = \frac{3\times10^8 m/s}{60s^{-1}} = 5\times10^6m
+		      \]
+	      \end{examp}
+	\item \textbf{Net Charge}
+
+	      The net charge on every component in a system is always zero.
+	\item \textbf{Magnetic Coupling}
+
+	      There is no magnetic coupling between components in a system.
+\end{itemize}
+\subsection*{Charge, Voltage, and Current}
+\begin{itemize}
+	\item Charge is discrete
+	      \[q = 1.602\times10^{-19}C\]
+	\item \textbf{Charge is Bipolar}
+\end{itemize}
+\end{document}
