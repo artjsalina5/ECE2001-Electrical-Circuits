@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Introduction}{3}{}%
+\contentsline {section}{\numberline {3}Theory}{3}{}%
+\contentsline {subsection}{\numberline {3.1}The Operational Amplifier}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Linear Operation of Terminal Voltages}{4}{}%
+\contentsline {subsection}{\numberline {3.3}The Potentiometer}{5}{}%
+\contentsline {subsection}{\numberline {3.4}The Photoresistor}{5}{}%
+\contentsline {section}{\numberline {4}Experimental Procedures}{6}{}%
+\contentsline {subsection}{\numberline {4.1}A Quickly Saturated Beginning}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Comparing Two Input Voltages}{7}{}%
+\contentsline {subsection}{\numberline {4.3}A Mini-Design Challenge}{7}{}%
+\contentsline {subsection}{\numberline {4.4}An Inverting Amplifier with Feedback}{8}{}%
+\contentsline {subsection}{\numberline {4.5}Allegro Cadence PSpice Segue}{9}{}%
+\contentsline {section}{\numberline {5}Results and Discussion}{11}{}%
+\contentsline {subsection}{\numberline {5.1}A Quickly Saturated Beginning}{11}{}%
+\contentsline {subsection}{\numberline {5.2}A Comparator Circuit, Modulating Reference Voltage}{13}{}%
+\contentsline {subsection}{\numberline {5.3}An Automatic Night Light Circuit}{14}{}%
+\contentsline {subsection}{\numberline {5.4}An Inverting Op-Amp}{15}{}%
+\contentsline {subsection}{\numberline {5.5}The Ideal Simulated Case}{16}{}%
+\contentsline {section}{\numberline {6}Conclusion}{17}{}%

@@ -72,7 +72,8 @@ behavior, and an exponential fit was used to the forward current data.
 Kirchoff's Voltage Law was then verified a nd tested using a series resistor
 circuit, and the calculated equivalent resistance (real) was compared to the
 theoretical expectation (ideal). The results demonstrated an agreement with the
-theoretical predictions within the acceptable tolerance limits given by the 5%
+theoretical predictions within the acceptable tolerance limits given by the
+\(5\%\) tolerance
 rating of the resistors.
 \newpage
 \section{Introduction}
@@ -82,8 +83,8 @@ key concepts in electrical engineering, particularly focusing on direct current
 Voltage and Current Laws through practical experimentation and to gain hands-on
 experience with standard electronic components. This lab also aimed to introduce
 the equipment and methods used for electrical measurements, such as the use of a
-digital multimeter and the Scopy software tool interfaced with an ADAM2000 power
-supply.
+digital multimeter and the Scopy software tool interfaced with an ADALM2000 unit
+which served as the power supply and voltmeter.
 
 Understanding the characteristics of resistors and LEDs is crucial for any
 electrical engineer, as these components are foundational in both educational
@@ -100,7 +101,10 @@ This session was particularly focused on reinforcing circuit analysis
 techniques, including voltage and current division, to provide students with the
 tools needed to successfully analyze and build more complex circuits in future
 labs. The procedures and results from this lab are expected to lay the
-groundwork for more advanced studies in electronic circuit design and analysis.
+groundwork for more advanced studies in electronic circuit design and analysis
+as well as offer an introduction to utilizing the protoboard for circuit layout,
+the use of voltmeters and current meters, and deciphering an electrical
+schematic for practical layout.
 
 These expanded sections offer a broader context, detailing the educational and
 practical implications of the experiments, and setting the stage for a detailed
@@ -131,9 +135,36 @@ where:
 The LED requires a threshold voltage to allow significant current flow.
 
 \subsection{Kirchhoff’s Laws}
-Kirchhoff’s Voltage Law (KVL) states that the sum of all voltages around a closed loop must equal zero:
-\[ \sum V = 0 \]
-Kirchhoff’s Current Law (KCL) states that the sum of currents entering a node must equal the sum of currents leaving the node.
+\subsubsection{Kirchhoff’s Voltage Law (KVL)}
+KVL states that the algebraic sum of all
+voltages around a closed path in a circuit  must equal zero:
+\[ \sum \upsilon_{loop} = \upsilon_1 + ... + \upsilon_p = 0 \]
+\subsubsection{Kirchhoff’s Current Law (KCL)}
+KCL states that the sum of currents entering a node must equal the sum of currents leaving the node.
+\[
+	\sum i_{total} = i_1 + ... + i_p = 0
+\]
+\subsection{Current and Voltage Division}
+\subsubsection{Current Division}
+By implementing \textbf{Ohm's Law} to calculate \(i\) which is the current
+through all resistors in parallel, the equivalent resistance, \(R_{eq}\) can be
+calculated. Then, Ohm's Law is applied further to produce the current division
+formula which can be utilized to calculate the current flowing through a
+particular branch or \textit{junction} of a parallel system. Here, \(i_j\) is
+that junctions current we solve for.
+\[
+	i_j = \frac{\upsilon}{R_j} = \frac{R_eq}{R_j}i
+\]
+\subsubsection{Voltage Division}
+Similarly, \textbf{Ohm's Law} can be implemented down the chain for calculating
+the voltage drop through a network for series resistors. As the electromotive
+force travels through the network, each series resistor resists some of that
+force and produces a \textit{voltage drop}. This voltage drop can be solved for
+utilizing the same nomenclature as the current division formula with
+\(\upsilon_j\) being the target.
+\[
+	\upsilon_j = iR_j = \frac{R_j}{R_{eq}}\upsilon.
+\]
 
 \section{Experimental Procedures}
 
@@ -144,7 +175,7 @@ The first experiment utilized the circuit shown in Figure \ref{fig:first}
 		\centering
 		\begin{circuitikz}
 			\tikzstyle{every node}=[font=\normalsize]
-			\draw (6,17.75) to[R,l={ \normalsize Rs 200$\Omega$}] (9.75,17.75);
+			\draw (6,17.75) to[R,l={ \normalsize Rs 750$\Omega$}] (9.75,17.75);
 			\draw (6,17.75) to[american voltage source,l={ \normalsize Vs}] (6,15);
 			\draw (9.75,17.75) to[short] (9.75,15);
 			\draw (9.75,15) to[short] (6,15);
@@ -165,6 +196,10 @@ The first experiment utilized the circuit shown in Figure \ref{fig:first}
 	      \end{figure}
 
 	\item Voltage was varied from -5V to +5V.
+
+	      This was recorded utilizing the ADALM 2000 orange leads acting as the
+	      voltmeter. For the rest of the experiment, real voltage is measured this
+	      way and will require no elaboration.
 	\item The current was recorded for each voltage step.
 
 	      Table \ref{tab:resistor_data} contains the data recorded for this first
@@ -173,10 +208,18 @@ The first experiment utilized the circuit shown in Figure \ref{fig:first}
 \subsection{LED I-V Characteristic Measurement}
 \begin{enumerate}
 	\item A red LED was tested.
-	\item Forward voltage was increased from -3V to 5V, ensuring reverse bias did
-	      not exceed 3V to avoid blowing out the LED.
+	\item Forward voltage was increased from -3V to 5V.
+
+
+	      Particular care was given to ensuring reverse bias did not exceed 3V to
+	      avoid blowing out the LED.
+
+
 	\item The current was recorded for each voltage step in Table
 	      \ref{tab:led_data} and plotted in Figure \ref{fig:ex2}
+
+	      Note: If the voltage did not produce enough force to forward bias the
+	      LED, no current flows through the circuit.
 \end{enumerate}
 
 \subsection{Series Resistor Circuit Measurement}
@@ -188,8 +231,9 @@ The first experiment utilized the circuit shown in Figure \ref{fig:first}
 	\label{fig:exp3}
 \end{figure}
 \begin{enumerate}
-	\item Measured values of \( V_S, V_1, V_2, V_3 \) were recorded.
-	\item Kirchhoff’s Voltage Law was tested.
+	\item Measured values of \( upsilon_S, upsilon_1, upsilon_2, upsilon_3 \) were recorded.
+	\item Kirchhoff’s Voltage Law was tested in conjunction with the Voltage
+	      Divider method.
 \end{enumerate}
 
 \subsection{Parallel Resistive Circuit Measurement}
@@ -203,29 +247,34 @@ The first experiment utilized the circuit shown in Figure \ref{fig:first}
 
 \begin{enumerate}
 	\item Measured values of \( I_S, I_1, I_2, I_3 \) were recorded.
-	\item Kirchhoff’s Current Law was tested.
+	\item Kirchhoff’s Current Law was tested in conjunction with the current
+	      divider method.
 \end{enumerate}
 
 \section{Results and Discussion}
 
 \subsection{Resistor Data}
-The experimental data for the resistor's I-V characteristics is summarized in the table below. This data was obtained by systematically varying the input voltage \( V_{in} \) and measuring the corresponding voltage across the resistor \( V_{measured} \) and the current \( I_{measured} \).
+The experimental data for the resistor's \(i-\upsilon\) characteristics is
+summarized in the table below. This data was obtained by systematically varying
+the input voltage \( \upsilon_{in} \) and measuring the corresponding voltage
+across the resistor \( \upsilon_{measured} \) and the current \( i_{measured} \).
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\textbf{\(V_{in} (V)\)} & \textbf{\(V_{measured} (V)\)} & \textbf{\(I_{measured} (mA)\)} \\
+		\textbf{\(\upsilon_{in} (V)\)} & \textbf{\(\upsilon_{measured} (V)\)} &
+		\textbf{\(i_{measured} (mA)\)}                                                \\
 		\hline
-		5.0                     & 4.994                         & 6.70                           \\
-		3.0                     & 2.940                         & 4.01                           \\
-		2.0                     & 1.992                         & 2.67                           \\
-		1.0                     & 0.993                         & 1.33                           \\
-		0                       & 0.006                         & 0.01                           \\
-		-1                      & -1.000                        & -1.34                          \\
-		-2                      & -2.001                        & -2.67                          \\
-		-3                      & -3.057                        & -4.01                          \\
-		-5                      & -5.045                        & -6.69                          \\
+		5.0                            & 4.994                                & 6.70  \\
+		3.0                            & 2.940                                & 4.01  \\
+		2.0                            & 1.992                                & 2.67  \\
+		1.0                            & 0.993                                & 1.33  \\
+		0                              & 0.006                                & 0.01  \\
+		-1                             & -1.000                               & -1.34 \\
+		-2                             & -2.001                               & -2.67 \\
+		-3                             & -3.057                               & -4.01 \\
+		-5                             & -5.045                               & -6.69 \\
 		\hline
 	\end{tabular}
 	\caption{Measured Data for Resistor I-V Characteristics}
@@ -242,8 +291,8 @@ As depicted in Figure \ref{fig:ex1}, the I-V curve for the resistor demonstrates
 
 
 \begin{itemize}
-	\item At \( V_{in} = 5.0 \, V \) and \( I_{measured} = 6.70 \, mA \), the resistance calculates to approximately \( 746.27 \, \Omega \).
-	\item At \( V_{in} = -5.0 \, V \) and \( I_{measured} = -6.69 \, mA \), the resistance calculates to approximately \( 747.38 \, \Omega \).
+	\item At \( \upsilon_{in} = 5.0 \, V \) and \( i_{measured} = 6.70 \, mA \), the resistance calculates to approximately \( 746.27 \, \Omega \).
+	\item At \( \upsilon_{in} = -5.0 \, V \) and \( \upsilon_{measured} = -6.69 \, mA \), the resistance calculates to approximately \( 747.38 \, \Omega \).
 \end{itemize}
 
 These values are notably close to 750 ohms. This correspondence within a
@@ -267,17 +316,18 @@ The measured I-V characteristics of a red LED are presented in the table below. 
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\textbf{\(V_{in} (V)\)} & \textbf{\(V_{measured} (V)\)} & \textbf{\(I_{measured} (mA)\)} \\
+		\textbf{\(\upsilon_{in} (V)\)} & \textbf{\(\upsilon_{measured} (V)\)} &
+		\textbf{\(i_{measured} (mA)\)}                                                \\
 		\hline
-		5                       & 2.057                         & 14.67                          \\
-		4                       & 2.019                         & 9.88                           \\
-		3                       & 1.958                         & 5.21                           \\
-		2                       & 1.836                         & 0.86                           \\
-		1.0                     & 1.005                         & 0.00                           \\
-		0                       & 0.008                         & 0.00                           \\
-		-1                      & -1.009                        & 0.00                           \\
-		-2                      & -2.016                        & 0.00                           \\
-		-3                      & -3.073                        & 0.00                           \\
+		5                              & 2.057                                & 14.67 \\
+		4                              & 2.019                                & 9.88  \\
+		3                              & 1.958                                & 5.21  \\
+		2                              & 1.836                                & 0.86  \\
+		1.0                            & 1.005                                & 0.00  \\
+		0                              & 0.008                                & 0.00  \\
+		-1                             & -1.009                               & 0.00  \\
+		-2                             & -2.016                               & 0.00  \\
+		-3                             & -3.073                               & 0.00  \\
 		\hline
 	\end{tabular}
 	\caption{Measured Data for Red LED I-V Characteristics}
@@ -307,9 +357,11 @@ expectations.
 	\centering
 	\begin{tabular}{|c||c|c|c|c|}
 		\hline
-		\textbf{\(V_{in} (V)\)} & \textbf{\(V_{R_1} (V)\)} & \textbf{\(V_{R_2} (V)\)} & \textbf{\(V_{R_3} (V)\)} & \textbf{\(I_{eq} (mA)\)} \\
+		\textbf{\(\upsilon_{in} (V)\)}  & \textbf{\(\upsilon_{R_1} (V)\)} &
+		\textbf{\(\upsilon_{R_2} (V)\)} & \textbf{\(\upsilon_{R_3} (V)\)} &
+		\textbf{\(i_{eq} (mA)\)}                                                                 \\
 		\hline
-		5                       & 0.595                    & 1.217                    & 3.073                    & 6.25                     \\
+		5                               & 0.595                           & 1.217 & 3.073 & 6.25 \\
 		\hline
 	\end{tabular}
 	\caption{Measured Data for Series Resistive Circuit}
@@ -324,7 +376,7 @@ This nearly matches the input voltage of 5V, with a small discrepancy of \(0.115
 
 Furthermore, the total or equivalent resistance \( R_{eq} \) of the circuit was calculated using the measured current:
 \[
-	R_{eq} = \frac{V_{s}}{I_{eq}} = \frac{4.885V}{0.00625A} = 781.6\Omega
+	R_{eq} = \frac{\upsilon_{s}}{I_{eq}} = \frac{4.885V}{0.00625A} = 781.6\Omega
 \]
 This calculated resistance is compared against the theoretically expected resistance:
 \[
@@ -338,13 +390,13 @@ This error margin is within the typical tolerance range for commercial resistors
 
 To further validate the results using the voltage divider rule, the expected voltages across each resistor were calculated and compared to the measured values:
 \[
-	V_{R_3, Ideal} = 5V \left(\frac{100\Omega}{810\Omega}\right) = 0.617V
+	\upsilon_{R_3, Ideal} = 5V \left(\frac{100\Omega}{810\Omega}\right) = 0.617V
 \]
 \[
-	V_{R_2, Ideal} = 5V \left(\frac{200\Omega}{810\Omega}\right) = 1.235V
+	\upsilon_{R_2, Ideal} = 5V \left(\frac{200\Omega}{810\Omega}\right) = 1.235V
 \]
 \[
-	V_{R_1, Ideal} = 5V \left(\frac{510\Omega}{810\Omega}\right) = 3.148V
+	\upsilon_{R_1, Ideal} = 5V \left(\frac{510\Omega}{810\Omega}\right) = 3.148V
 \]
 The comparison of these ideal voltages with the actual measurements demonstrates good agreement, further confirming the accuracy of the theoretical models used to describe the behavior of series circuits.
 
@@ -412,4 +464,4 @@ This detailed assessment confirms that the parallel circuit adheres to Kirchhoff
 \section*{Conclusion}
 This laboratory exercise successfully demonstrated fundamental electrical principles such as Ohm's Law, Kirchhoff's Voltage and Current Laws, and the behavior of LEDs under different biases. The experiments reinforced theoretical knowledge through practical application, providing a solid foundation for further study in electronic circuit design and analysis.
 \end{document}
-% vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet:
+% vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:
