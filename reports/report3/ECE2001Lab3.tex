@@ -67,12 +67,12 @@ This experiment aims to teach the basic properties of operational amplifies (Op
 Amps). Through the use of the ADALM2000 and several different circuits, the Op
 Amp's properties are explored. By creating a single comparator circuit and an
 amplifier circuit, the linear region of the op amp is exploited and put on show.
-By starting out with no feedback, it is made apparent to the student how quickly
+By starting out with no feedback, it is made apparent to how quickly
 the op amp saturates and how impractical its use in a system like this would be.
 After applying a feedback loop to the circuit through the use of potentiometers
 (pots) and a photoresistor, the operational use of the op amp is demonstrated in
 a physical manner. A small simulation in production ready simulation tools is
-also included to further stimulate the student's knowledge on op amps.
+also included to further stimulate the knowledge on op amps.
 \newpage
 \section{Introduction}
 The operational amplifier is a component which can serve many applications,
@@ -309,9 +309,7 @@ The fourth experiment utilized the circuit shown in Figure \ref{fig:inverter}
 	      region operates.
 	\item Positive and negative values of \(V_{in}\) provided a different
 	      operating characteristic under these conditions.
-	\item Values are populated and demonstrated in Table
-	      \ref{tab:inverting_amp_comparison}
-	      compared against the circuit in PSpice Simulation
+	\item Output results are populated in Figure \ref{fig:03_pspice}
 \end{enumerate}
 
 \subsection{Allegro Cadence PSpice Segue}
@@ -349,7 +347,10 @@ circuit built is provided in Figure \ref{fig:pspicecircuit}
 
 The first experiment demonstrated how an operational amplifier without feedback rapidly saturates. As seen in Table \ref{tab:measured_data}, even small changes in input voltage resulted in immediate saturation to either the positive or negative supply rails. This behavior is expected since, in the absence of feedback, the operational amplifier functions as an open-loop amplifier with an exceedingly high gain. This high gain causes even minute input voltage variations to push the output to its limits.
 
-Figure \ref{fig:exp1} visually represents this saturation effect. The practical implication of such a circuit is that it cannot be used for controlled amplification but is rather suited for comparator applications.
+Figure \ref{fig:exp1} visually represents this saturation effect. The practical
+implication of such a circuit is that it cannot be used for controlled
+amplification but is rather suited for comparator applications. High Saturation
+and low saturation voltages are plotted in Figure \ref{fig:exp1}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -390,7 +391,13 @@ Figure \ref{fig:exp1} visually represents this saturation effect. The practical 
 \subsection{A Comparator Circuit, Modulating Reference Voltage}
 Introducing a reference voltage, $V_{REF}$, provided a method to compare the input voltage against a defined threshold. The experimental data in Table \ref{tab:comparator} reveal that changing the reference voltage alters the transition point at which the amplifier output flips between the supply rails.
 
-As illustrated in Figure \ref{fig:exp2}, the comparator circuit continues to exhibit the characteristic rapid switching between extremes, confirming that it is well-suited for binary decision-making applications. However, the inability to finely control the output voltage without saturation still poses challenges when precise analog outputs are required.
+As illustrated in Figure \ref{fig:exp2}, the comparator circuit continues to
+exhibit the characteristic rapid switching between extremes, confirming that it
+is well-suited for binary decision-making applications. However, the inability
+to finely control the output voltage without saturation still poses challenges
+when precise analog outputs are required. The data points show that the
+comparator simply outputs the saturation voltage of the greater of the two
+potentials.
 \begin{table}[H]
 	\centering
 	\caption{Measured Data for Different $V_{REF}$ Settings}
@@ -434,12 +441,30 @@ As illustrated in Figure \ref{fig:exp2}, the comparator circuit continues to exh
 	\label{fig:exp2}
 \end{figure}
 
+It is displayed quite obviously that the feedbackless operational amplifier
+chooses to saturate based on input conditions alone. Either the output voltage
+was positive saturation or negative saturation, nothing else, yet the values
+felt at the output were slightly changed than the first part due to the circuit
+design.
+
 \subsection{An Automatic Night Light Circuit}
-The experiment involving the photoresistor-based automatic night light circuit successfully showcased the behavior of the component under varying light conditions. The measured resistance values at full light (0.197 k$\Omega$) and full darkness (14.92 k$\Omega$) highlight the significant resistance change as light intensity varies.
+The experiment involving the photoresistor-based automatic night light circuit
+successfully showcased the behavior of the component under varying light
+conditions. The measured resistance values at full light (0.197 k$\Omega$) and
+full darkness (14.92 k$\Omega$) highlight the significant resistance change as
+light intensity varies.
 
-Table \ref{tab:photoresistor} demonstrates the corresponding output voltages, showing a clear inverse relationship between light intensity and output voltage. As expected, the LED brightness increased in darkness due to the decreasing feedback resistance, leading to a higher output voltage.
+Table \ref{tab:photoresistor} demonstrates the corresponding output voltages,
+showing a clear inverse relationship between light intensity and output voltage.
+As expected, the LED brightness increased in darkness due to the decreasing
+feedback resistance, leading to a higher output voltage.
 
-The fitted curve in Figure \ref{fig:exp3} validates the nonlinear nature of the photoresistor response, showing a logarithmic trend rather than a linear progression. This confirms the expected exponential change in resistance as a function of illumination intensity, an essential characteristic for night-light circuit designs.
+The fitted curve in Figure \ref{fig:exp3} validates the nonlinear nature of the
+photoresistor response, showing a logarithmic trend rather than a linear
+progression. This confirms the expected exponential change in resistance as a
+function of illumination intensity, an essential characteristic for night-light
+circuit designs.
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -469,10 +494,33 @@ The fitted curve in Figure \ref{fig:exp3} validates the nonlinear nature of the 
 	\label{fig:exp3}
 \end{figure}
 
+The design choice of using the photoresistor as an inverting feedback resistor
+was made deliberately in order to give better linearity to the behavior of the
+circuit. This was perhaps different than the task to simply use it as an input
+resistance, but in effect this circuit is superior and adheres to better
+practices in the use of operational amplifiers by widening the linear response
+region while still solving the design problem.
 \subsection{An Inverting Op-Amp}
 Unlike the previous circuits, the inverting amplifier configuration in Figure \ref{fig:inverter} utilized feedback to establish a stable linear region of operation. Table \ref{tab:inverting_amp} presents measured data that confirm the expected inverting gain relationship between $V_{in}$ and $V_{out}$.
 
-Unlike previous circuits, this setup allowed for a controlled output range, as seen in Figure \ref{fig:exp3}. The amplifier effectively operated within its linear range before hitting saturation limits, demonstrating a stark contrast to the open-loop configurations tested earlier.
+Unlike previous circuits, this setup allowed for a controlled output range, as
+seen in Table \ref{tab:inverting_amp}. The amplifier effectively operated within
+its linear range before hitting saturation limits, demonstrating a stark
+contrast to the open-loop configurations tested earlier. The use of this circuit
+is much more apparent now with negative feedback. It amplifies the voltage felt
+at the negative terminal by a factor which is proportional to the feedback
+resistor and the input resistance.
+
+During experimentation, there was a ``deadzone" in the potentiometer position
+and the input voltage to the circuit which lasted from \(-0.060V \implies
++0.060V\). This made obtaining data difficult in this region, but it is expected
+behavior! As when in the linear region, the operational amplifier applies
+something called a voltage short condition where the potential felt at the
+terminals are equal to each other. This allowed for granularity in the output
+which show a clear linear relationship as the potentiometer was positioned.
+
+This is later confirmed in the Cadence PSpice simulator to be on the scale of
+nanovolts, which was quite interesting.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -494,31 +542,24 @@ Unlike previous circuits, this setup allowed for a controlled output range, as s
 	\caption{Measured Data for Inverting Amplifier Circuit}
 	\label{tab:inverting_amp}
 \end{table}
-\subsection{The Ideal Simulated Case}
-The final experiment compared measured results to those obtained from PSpice simulations. As seen in Table \ref{tab:inverting_amp_comparison}, while the general trends match, small deviations exist due to the real-world imperfections of components such as resistor tolerances, op-amp bias currents, and thermal variations.
+This data shows a linear region in which output voltages were linearly swept
+through while the voltage felt at the negative inverting terminal was kept
+shorted to the positive terminal by the voltage short characteristic. As soon as
+the operational amplifier reached saturation, voltages at the negative terminal
+were able to be recorded as in the previous examples. These outcomes and
+behavior was expected.
 
-The PSpice-generated curve in Figure \ref{fig:03_pspice} illustrates the precise theoretical behavior of the circuit. Unlike the experimental results, which contain minor inconsistencies, the simulation provides an idealized response curve. The comparison underscores the value of simulation tools in predicting circuit behavior while also emphasizing the importance of validating theoretical models against physical measurements.
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		\textbf{Measured $V_{in}$ (V)} & \textbf{Measured $V_{out}$ (V)} & \textbf{Simulated $V_{in}$ (V)} & \textbf{Simulated $V_{out}$ (V)} \\
-		\hline
-		2.940                          & -2.850                          & -2.546                          & 4.815                            \\
-		1.952                          & -2.870                          & -2.546                          & 4.815                            \\
-		1.359                          & -2.880                          & -2.545                          & 4.815                            \\
-		0.920                          & -2.890                          & -2.544                          & 4.815                            \\
-		0.346                          & -2.900                          & -2.543                          & 4.815                            \\
-		-0.006                         & 3.970                           & -2.543                          & 4.815                            \\
-		-0.605                         & 4.190                           & -2.542                          & 4.815                            \\
-		-1.154                         & 4.190                           & -2.541                          & 4.815                            \\
-		-2.014                         & 4.190                           & -2.540                          & 4.815                            \\
-		-2.723                         & 4.190                           & -2.540                          & 4.815                            \\
-		\hline
-	\end{tabular}
-	\caption{Comparison of Measured and Simulated Data for Inverting Amplifier}
-	\label{tab:inverting_amp_comparison}
-\end{table}
+\subsection{The Ideal Simulated Case}
+The final experiment compared measured results to those obtained from PSpice
+simulations. This matches up with the behavior seen in the lab, although at
+slightly different voltages due to tolerances in the experiment. This is
+expected behavior.
+
+The PSpice-generated curve in Figure \ref{fig:03_pspice} illustrates the precise
+theoretical behavior of the circuit. When zoomed in on, it exhibits expected
+behavior at a much smaller scale that could be measured in the lab experiment,
+although it was behaviorally showed in the output voltages. See previous Figure
+\ref{fig:pspicesweep}.
 
 \begin{figure}[H]
 	\centering
@@ -527,12 +568,27 @@ The PSpice-generated curve in Figure \ref{fig:03_pspice} illustrates the precise
 	\label{fig:03_pspice}
 \end{figure}
 
+Nonetheless, the output voltage during experimentation verified the linear
+operation of the operational amplifier and showed how it can be used in a
+potential circuit design.
+
 \section{Conclusion}
-Through this series of experiments, we explored the fundamental operational amplifier configurations and their respective behaviors. The feedbackless amplifier demonstrated the rapid saturation effect, while the comparator circuit highlighted the utility of reference voltage for decision-making applications.
+Through this series of experiments, we explored the fundamental operational
+amplifier configurations and their respective behaviors. The feedbackless
+amplifier demonstrated the rapid saturation effect, while the comparator circuit
+highlighted the utility of reference voltage for decision-making applications.
 
-The night light circuit effectively illustrated the nonlinear response of a photoresistor, validating its use in light-sensitive applications. Finally, the inverting amplifier circuit provided a controlled amplification region, proving the necessity of feedback in maintaining operational stability.
+The night light circuit effectively illustrated the nonlinear response of a
+photoresistor, validating its use in light-sensitive applications. Finally, the
+inverting amplifier circuit provided a controlled amplification region, proving
+the necessity of feedback in maintaining operational stability.
 
-Comparing experimental data with PSpice simulations reinforced the understanding that real-world imperfections affect circuit performance, but theoretical models remain valuable for design validation. The findings from these experiments provide a foundational understanding of how operational amplifiers behave under different configurations and real-world conditions.
+Building and modeling the circuit in Cadence Allegro PSpice allowed for further
+enrichment in utilizing the tool to simulate DC circuits and measure ideal
+response curves. Comparing this circuit to the one built in the lab offered
+insight and explanation to the behavior seen in the recording data.
 
+To summarize, this was an excellent opportunity to learn about utilizing the
+operational amplifier IC and lays good groundwork for experimentation to come.
 \end{document}
 % vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:
