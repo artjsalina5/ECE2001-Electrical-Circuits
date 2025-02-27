@@ -1,0 +1,64 @@
+LTspice 24.1.4 for Windows
+Circuit: C:\users\art\Documents\LTspice\Draft1.net
+Start Time: Thu Feb 27 10:40:26 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 7.52941
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0208333
+Gmin = 7.3458
+vernier = 0.0277778
+Gmin = 6.91403
+vernier = 0.037037
+vernier = 0.0493827
+Gmin = 6.26214
+vernier = 0.0658435
+vernier = 0.0877914
+Gmin = 5.35505
+vernier = 0.117055
+Gmin = 4.15898
+vernier = 0.156073
+vernier = 0.208098
+Gmin = 2.75831
+vernier = 0.277464
+vernier = 0.369952
+Gmin = 1.45008
+vernier = 0.493269
+Gmin = 0.520949
+vernier = 0.657691
+vernier = 0.876922
+Gmin = 0.102653
+vernier = 1
+Gmin = 0.011878
+Gmin = 0.00127539
+Gmin = 0.000136944
+Gmin = 1.47043e-05
+Gmin = 1.57886e-06
+Gmin = 1.69529e-07
+Gmin = 1.8203e-08
+Gmin = 1.95453e-09
+Gmin = 2.09866e-10
+Gmin = 2.25342e-11
+Gmin = 2.41959e-12
+Gmin = 2.59802e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.054 seconds.
+
+Files loaded:
+C:\users\art\Documents\LTspice\Draft1.net
+C:\users\art\AppData\Local\LTspice\lib\cmp\standard.mos
+C:\users\art\AppData\Local\LTspice\lib\sub\UniversalOpAmp1.lib
+
