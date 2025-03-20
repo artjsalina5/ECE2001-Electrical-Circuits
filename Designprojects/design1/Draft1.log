@@ -1,6 +1,6 @@
 LTspice 24.1.4 for Windows
 Circuit: Z:\home\art\school\ECE2001-Electrical-Circuits\Designprojects\design1\Draft1.net
-Start Time: Mon Mar 10 20:16:43 2025
+Start Time: Thu Mar 20 16:09:33 2025
 solver = Normal
 Maximum thread count: 32
 tnom = 27
@@ -9,121 +9,29 @@ method = trap
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
 Gmin = 10
-Gmin = 1.07374
-Gmin = 0.115292
-Gmin = 0.0123794
-Gmin = 0.00132923
 vernier = 0.5
-vernier = 0.25
-vernier = 0.125
-vernier = 0.0625
-vernier = 0.03125
-vernier = 0.015625
-Gmin = 0.000680565
-vernier = 0.0078125
-vernier = 0.00390625
-vernier = 0.00195312
-vernier = 0.000976562
-vernier = 0.000488281
+vernier = 0.666667
+Gmin = 3.04418
+vernier = 0.888888
+Gmin = 0.5164
+vernier = 1
+Gmin = 0.0567082
+Gmin = 0.006089
+Gmin = 0.000653801
+Gmin = 7.02013e-05
+Gmin = 7.53781e-06
+Gmin = 8.09366e-07
+Gmin = 8.6905e-08
+Gmin = 9.33136e-09
+Gmin = 1.00195e-09
+Gmin = 1.07583e-10
+Gmin = 1.15517e-11
+Gmin = 1.24035e-12
+Gmin = 1.33182e-13
 Gmin = 0
-Gmin stepping failed
+Gmin stepping succeeded in finding the operating point.
 
-Starting source stepping with srcstepmethod=0
-Source Step = 3.0303%
-vernier = 0.25
-Source Step = 0.0177557%
-Source Step = 0.0473485%
-Source Step = 0.0769413%
-Source Step = 0.106534%
-Source Step = 0.136127%
-Source Step = 0.16572%
-vernier = 0.00146484
-Source Step = 0.20715%
-Source Step = 0.251539%
-Source Step = 0.295928%
-Source Step = 0.340317%
-Source Step = 0.384706%
-vernier = 0.00219727
-Source Step = 0.444632%
-Source Step = 0.511216%
-Source Step = 0.577799%
-Source Step = 0.644383%
-Source Step = 0.710967%
-vernier = 0.0032959
-Source Step = 0.797526%
-Source Step = 0.897402%
-Source Step = 0.997277%
-Source Step = 1.09715%
-Source Step = 1.19703%
-vernier = 0.00494385
-Source Step = 1.32187%
-Source Step = 1.47169%
-Source Step = 1.6215%
-Source Step = 1.77131%
-Source Step = 1.92113%
-vernier = 0.00741577
-Source Step = 2.1009%
-Source Step = 2.32562%
-Source Step = 2.55034%
-Source Step = 2.77507%
-Source Step = 2.99979%
-vernier = 0.0111237
-Source Step = 3.25821%
-Source Step = 3.59529%
-Source Step = 3.93237%
-Source Step = 4.26946%
-Source Step = 4.60654%
-vernier = 0.0166855
-Source Step = 4.97732%
-Source Step = 5.48295%
-Source Step = 5.98857%
-Source Step = 6.49419%
-Source Step = 6.99981%
-vernier = 0.0250282
-Source Step = 7.53071%
-Source Step = 8.28914%
-Source Step = 9.04757%
-Source Step = 9.806%
-Source Step = 10.5644%
-Source Step = 11.3229%
-vernier = 0.0375423
-Source Step = 12.4605%
-Source Step = 13.5982%
-Source Step = 14.7358%
-Source Step = 15.8735%
-Source Step = 17.0111%
-vernier = 0.0563135
-Source Step = 18.6607%
-Source Step = 20.3672%
-Source Step = 22.0736%
-Source Step = 23.7801%
-Source Step = 25.4866%
-vernier = 0.0844703
-Source Step = 27.8756%
-Source Step = 30.4353%
-Source Step = 32.995%
-Source Step = 35.5547%
-Source Step = 38.1144%
-vernier = 0.126705
-Source Step = 41.57%
-Source Step = 45.4096%
-Source Step = 49.2492%
-Source Step = 53.0887%
-Source Step = 56.9283%
-vernier = 0.190058
-Source Step = 61.9197%
-Source Step = 67.679%
-Source Step = 73.4384%
-Source Step = 79.1977%
-Source Step = 84.9571%
-vernier = 0.285087
-Source Step = 92.1562%
-Source Step = 100%
-Source Step = 100%
-Source Step = 100%
-Source stepping succeeded in finding the operating point.
-
-Total elapsed time: 0.078 seconds.
+Total elapsed time: 0.069 seconds.
 
 Files loaded:
 Z:\home\art\school\ECE2001-Electrical-Circuits\Designprojects\design1\Draft1.net
