@@ -8,7 +8,6 @@
 \usepackage{amsfonts}
 \usepackage{fancyhdr}
 \usepackage{geometry}
-\usepackage{circuitikz}
 \usepackage{subfigure}
 \usepackage{caption}
 \usepackage{karnaugh-map}
@@ -95,7 +94,7 @@ amplification of the signals.
 The first signal is from the Line Out of a computer acting as a music input
 which has a strong peak to peak voltage reading of $1.5V$. The second input is
 from a much weaker electret condenser microphone which outputs a peak to peak
-voltage of $3mV$.
+voltage of $1.5mV$.
 
 The star of this particular experiment is once again the $\mu A741$ which as
 stated in previous experiments, is quite an older design of the operational
@@ -338,10 +337,14 @@ The frequency response characteristics were determined by performing an AC sweep
 	\item \textbf{Circuit Configuration:}
 	      \begin{itemize}
 		      \item The mixer circuit was modeled precisely according to the schematic, excluding the final amplification stage (speaker output).
-		      \item For music channel characterization, the microphone input was grounded, and a sinusoidal AC voltage source (VAC) was applied to the music input with an amplitude of $1.02\,V$.
-		      \item For microphone channel characterization, the music input was grounded, and the microphone input was supplied with a sinusoidal VAC of $40\,mV$ amplitude.
+		      \item For music channel characterization, the microphone input was
+		            grounded, and a sinusoidal AC voltage source (VAC) was applied to
+		            the music input with an amplitude of $0.75\,V$.
+		      \item For microphone channel characterization, the music input was
+		            grounded, and the microphone input was supplied with a sinusoidal
+		            VAC of $1.5\,mV$ amplitude.
 	      \end{itemize}
-
+	      
 	\item \textbf{AC Sweep Simulation:}
 	      \begin{itemize}
 		      \item The frequency sweep spanned from $100\,Hz$ to $1\,MHz$, with at least 100 logarithmically spaced frequency points.
@@ -366,19 +369,18 @@ The experimental verification involved constructing the mixer circuit on a bread
 		      \item Gain was calculated experimentally by measuring the input and
 		            output voltages on Scopy and employing the decibel conversion
 		            mentioned above.\\
-		            \begin{examp}
-			            Determined Results\\
-			            LTSpice Gain at 2 kHz: 8.78 dB\\
-			            Scopy Gain at 2 kHz: 8.19 dB\\
-			            LTSpice Gain at 2 kHz (Mic): 20.23 dB\\
-			            Scopy Gain at 2 kHz (Mic): 20.09 dB\\
-		            \end{examp}
+		            
+		            LTSpice Gain at 2 kHz: \textbf{8.78 dB}\\
+		            Scopy Gain at 2 kHz: \textbf{8.19 dB}\\
+		            LTSpice Gain at 2 kHz (Mic): \textbf{20.23 dB}\\
+		            Scopy Gain at 2 kHz (Mic): \textbf{20.09 dB}\\
 	      \end{itemize}
-
+	      
 	\item \textbf{Frequency Response Measurements:}
 	      \begin{itemize}
 		      \item Frequency response was measured independently for both music and microphone channels, with the alternate input grounded to avoid cross-channel interference.
-		      \item Input signals were sinusoidal, with amplitudes of $1.02\,V$ for the music channel and $40\,mV$ for the microphone channel, as specified earlier.
+		      \item Input signals were sinusoidal, with amplitudes of $0.75\,V$ for
+		            the music channel and $1.5\,mV$ for the microphone channel, as specified earlier.
 		      \item Measurements were taken at approximately ten logarithmically spaced points per decade of frequency (e.g., $100\,Hz$, $200\,Hz$, $500\,Hz$, $1\,kHz$, $2\,kHz$, $5\,kHz$, etc.), spanning from $100\,Hz$ up to $1\,MHz$.
 		      \item Voltage amplitude and phase measurements were recorded using the ADALM2000 instrument and the Scopy software interface.
 		      \item Recorded voltage data was converted into decibels (dB) and phase shifts were noted directly from Scopy measurements.
@@ -393,7 +395,9 @@ The experimental frequency response closely matched simulated results at lower f
 
 \subsection{Noise Analysis and Observations}
 
-During measurements, significant noise became apparent, especially for the microphone channel at frequencies beyond $100\,kHz$. The lower amplitude of the microphone input ($40\,mV$) necessitated substantially higher gain, amplifying intrinsic circuit noise and measurement artifacts introduced by parasitic capacitances, breadboard wiring inductances, and electromagnetic interference from lab equipment.
+During measurements, significant noise became apparent, especially for the
+microphone channel at frequencies beyond $100\,kHz$. The lower amplitude of the
+microphone input ($3\,mV$) necessitated substantially higher gain, amplifying intrinsic circuit noise and measurement artifacts introduced by parasitic capacitances, breadboard wiring inductances, and electromagnetic interference from lab equipment.
 
 The noise observed in the experimental data manifests as irregular fluctuations in amplitude and phase measurements, complicating precise identification of cutoff frequencies. Nonetheless, by averaging multiple measurements and carefully interpreting the trends, reliable cutoff frequencies and general behavior were still identifiable and consistent with theoretical expectations.
 
@@ -402,7 +406,11 @@ The noise observed in the experimental data manifests as irregular fluctuations 
 The $\mu A741$ operational amplifier used in the design has inherent limitations such as limited bandwidth, relatively high noise levels, and susceptibility to slew-rate distortion. These factors significantly contributed to the observed noise, especially at high frequencies where the operational amplifier struggled to maintain linear amplification, resulting in distorted waveforms and unstable measurements.
 
 Replacing the $\mu A741$ with a modern, low-noise, higher-bandwidth operational amplifier could greatly improve the noise performance and extend the practical frequency response of the circuit.
-After performing both simulated (LTSpice) and experimental (Scopy) analyses, clear frequency response curves were generated for both the music and microphone input channels. The AC frequency sweep ranged from $100\,Hz$ to $1\,MHz$, with input amplitudes set at $1.02\,V$ for the music input and a larger test amplitude of $40\,mV$ for the microphone input due to its significantly lower initial signal level.
+After performing both simulated (LTSpice) and experimental (Scopy) analyses,
+clear frequency response curves were generated for both the music and microphone
+input channels. The AC frequency sweep ranged from $100\,Hz$ to $1\,MHz$, with
+input amplitudes set at $0.75\,V$ for the music input and a larger test
+amplitude of $1.5\,mV$ for the microphone input due to its significantly lower initial signal level.
 \subsection{Music Channel Frequency Response}
 
 Figure \ref{fig:music_bode} illustrates the amplitude and phase response of the music input, comparing LTSpice simulations to Scopy experimental measurements. The key findings are as follows:
@@ -430,7 +438,7 @@ By Inspection,
 	\footnotesize
 	\caption{Music Input Data Table: Frequency Response from LTSpice and Scopy}
 	\label{tab:music_data}
-	\renewcommand{\arraystretch}{1}
+	\renewcommand{\arraystretch}{.9}
 	\begin{tabular}{|r|r|r|r|r|}
 		\hline
 		\textbf{Freq (Hz)} & \textbf{LT Mag (dB)} & \textbf{SC Mag (dB)} & \textbf{LT Phase (°)} & \textbf{SC Phase (°)} \\ \hline
@@ -454,7 +462,7 @@ Figure \ref{fig:mic_bode} shows the Bode plot for the microphone channel, again 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\textwidth]{dp_mic}
+	\includegraphics[width=15cm]{dp_mic}
 	\caption{Microphone Input Bode Plot (LTSpice vs. Scopy)}
 	\label{fig:mic_bode}
 \end{figure}
@@ -474,7 +482,7 @@ By Inspection,
 	\footnotesize
 	\caption{Microphone Input Data Table: Frequency Response from LTSpice and Scopy}
 	\label{tab:mic_data}
-	\renewcommand{\arraystretch}{1.0}
+	\renewcommand{\arraystretch}{0.9}
 	\begin{tabular}{|r|r|r|r|r|}
 		\hline
 		\textbf{Freq (Hz)} & \textbf{LT Mag (dB)} & \textbf{SC Mag (dB)} & \textbf{LT Phase (°)} & \textbf{SC Phase (°)} \\ \hline
@@ -490,13 +498,32 @@ By Inspection,
 		100000             & 20.026               & 13.573               & 158.73                & -65.35                \\ \hline
 	\end{tabular}
 \end{table}
-Experimental measurements for the microphone input exhibited more pronounced noise and variability, primarily due to the sensitivity of the measurement equipment at the lower input amplitude of $40\,mV$ and the higher total gain of the circuit. Nonetheless, the trends match closely with the simulated results, validating the overall correctness of the design.
+Experimental measurements for the microphone input exhibited more pronounced
+noise and variability, primarily due to the sensitivity of the measurement
+equipment at the lower input amplitude of $1.5\,mV$ and the higher total gain of the circuit. Nonetheless, the trends match closely with the simulated results, validating the overall correctness of the design.
 
 \section{Conclusion}
 The experimental results closely align with the LTSpice simulations, providing confidence in both the theoretical design and practical implementation. Minor discrepancies observed at high frequencies can be attributed to measurement noise, parasitic capacitances, and limitations inherent to the experimental setup.
 
-The lower cutoff frequency of the microphone input highlights the trade-offs involved when dealing with high-gain audio amplification, such as reduced bandwidth and increased noise susceptibility. These practical insights underline the importance of careful circuit layout, component selection, and supply voltage considerations to achieve optimal audio fidelity.
+It is important to note the differences between the implementation in the
+protoboard compared to the simulation in LTSpice. LTSpice is simulating an ideal
+Operational Amplifier which adheres strictly to the theory of the Op Amp
+described in past experiments. Due to this, there is variation on the projected
+phase and the generated one in Scopy.
 
-Overall, the experiments successfully demonstrated the intended functionality, confirmed the theoretical predictions, and highlighted important practical considerations in analog audio circuit design.
+The lower cutoff frequency of the microphone input highlights the trade-offs
+involved when dealing with high-gain audio amplification, such as reduced
+bandwidth and increased noise susceptibility. These practical insights underline
+the importance of careful circuit layout, component selection, and supply
+voltage considerations to achieve optimal audio fidelity. There is some
+optimization to be had in attempting to reach such a high amplification level
+for the microphone input, while still adhering to design specifications, however
+due to the operational amplifier used, there are many limitations to this
+practically for now.
+
+Overall, this design project has successfully demonstrated a practical, from the
+ground up design and implementation of basic operational amplifier circuitry,
+with minimal need for more advanced components.
+
 \end{document}
 % vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:

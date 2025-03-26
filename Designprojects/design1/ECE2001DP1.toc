@@ -17,6 +17,6 @@
 \contentsline {section}{\numberline {5}Results and Discussion}{11}{}%
 \contentsline {subsection}{\numberline {5.1}Noise Analysis and Observations}{11}{}%
 \contentsline {subsection}{\numberline {5.2}Impact of Operational Amplifier Limitations}{11}{}%
-\contentsline {subsection}{\numberline {5.3}Music Channel Frequency Response}{12}{}%
+\contentsline {subsection}{\numberline {5.3}Music Channel Frequency Response}{11}{}%
 \contentsline {subsection}{\numberline {5.4}Microphone Channel Frequency Response}{13}{}%
-\contentsline {section}{\numberline {6}Conclusion}{15}{}%
+\contentsline {section}{\numberline {6}Conclusion}{14}{}%
