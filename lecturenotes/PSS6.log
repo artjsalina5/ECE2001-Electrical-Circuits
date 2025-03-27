@@ -1,0 +1,14 @@
+LTspice 24.1.5 for Windows
+Circuit: Z:\home\art\school\ECE2001-Electrical-Circuits\lecturenotes\PSS6.net
+Start Time: Tue Mar 25 12:23:52 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.028 seconds.
+
+Files loaded:
+Z:\home\art\school\ECE2001-Electrical-Circuits\lecturenotes\PSS6.net
+
