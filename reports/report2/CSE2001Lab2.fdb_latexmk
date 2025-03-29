@@ -1,11 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1742410475.3347 "CSE2001Lab2.tex" "CSE2001Lab2.pdf" "CSE2001Lab2" 1742410475.98343 2
-  "../../images/06_01.png" 1742406466.82358 50143 a621d2cb74a5cc4c0f19048369d52de3 ""
-  "../../images/06_02.png" 1742407138.60673 50431 d93dc1ea6047ce1f6a83e71661cabdda ""
-  "../../images/06_03.png" 1742408505.85697 85369 248f58ae0ede3bebbe2e4a887fad3561 ""
-  "../../images/uconnlogo.png" 1737484862.41784 249673 7a16062ef39e4714562db84431cd2c08 ""
+["pdflatex"] 1743280091.65143 "CSE2001Lab2.tex" "CSE2001Lab2.pdf" "CSE2001Lab2" 1743280092.34308 2
+  "../../images/06_01.png" 1743082738.98574 50143 a621d2cb74a5cc4c0f19048369d52de3 ""
+  "../../images/06_02.png" 1743082738.98674 50431 d93dc1ea6047ce1f6a83e71661cabdda ""
+  "../../images/06_03.png" 1743082738.98674 85369 248f58ae0ede3bebbe2e4a887fad3561 ""
+  "../../images/06_04.png" 1743271384.60425 64038 d01f1e59a8770a05df9622c3820959ca ""
+  "../../images/uconnlogo.png" 1743082738.98974 249673 7a16062ef39e4714562db84431cd2c08 ""
   "/etc/texmf/web2c/texmf.cnf" 1736425393.13134 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -175,13 +177,17 @@
   "/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty" 1717359999 13236 1aba485b47e3c79a47dc0906cc971820 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
+  "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1736425398.26737 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1736425401 5483312 31090f1c3437d4bbfc097aaea5bf9b97 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1736425431 8243100 edbb655ced075bcd82e8ab4092f92bd7 ""
-  "CSE2001Lab2.aux" 1742410475.95147 597 1a9552a45db5e7849ddb65bf1140f641 "pdflatex"
-  "CSE2001Lab2.tex" 1742410473.65346 9580 4395fa73117d0f50fe5c725ac3a31fb9 ""
+  "CSE2001Lab2.aux" 1743280092.30965 3437 0e6189242d3f4df6ccf8c498cdfc7dc5 "pdflatex"
+  "CSE2001Lab2.tex" 1743280091.03765 18037 d733de9d30d94275e0319f424d82ce8d ""
+  "CSE2001Lab2.toc" 1743280092.30965 1552 b5c71ece24725a4d7015ce80408aa0a3 "pdflatex"
   (generated)
   "CSE2001Lab2.aux"
   "CSE2001Lab2.log"
   "CSE2001Lab2.pdf"
+  "CSE2001Lab2.toc"
   (rewritten before read)

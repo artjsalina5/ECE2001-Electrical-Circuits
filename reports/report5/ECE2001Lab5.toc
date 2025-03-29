@@ -1,26 +1,29 @@
 \contentsline {section}{\numberline {1}Abstract}{2}{}%
 \contentsline {section}{\numberline {2}Introduction}{3}{}%
 \contentsline {section}{\numberline {3}Theory}{3}{}%
-\contentsline {section}{\numberline {4}Experimental Procedures}{3}{}%
-\contentsline {subsection}{\numberline {4.1}Circuit One}{3}{}%
-\contentsline {subsection}{\numberline {4.2}Circuit Two}{4}{}%
-\contentsline {subsection}{\numberline {4.3}Circuit Three}{4}{}%
-\contentsline {subsection}{\numberline {4.4}Circuit Four}{5}{}%
-\contentsline {subsection}{\numberline {4.5}Circuit Five}{6}{}%
-\contentsline {section}{\numberline {5}Results and Discussion}{7}{}%
-\contentsline {subsection}{\numberline {5.1}Circuit One: Charging Transient}{7}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}Data Table for Circuit One}{7}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Analysis}{7}{}%
-\contentsline {subsection}{\numberline {5.2}Circuit Two: Discharging Transient}{7}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Data Table for Circuit Two}{8}{}%
-\contentsline {subsubsection}{\numberline {5.2.2}Analysis}{8}{}%
-\contentsline {subsection}{\numberline {5.3}Circuit Three: Response to a Square Wave}{8}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Oscilloscope Image}{9}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Analysis}{9}{}%
-\contentsline {subsection}{\numberline {5.4}Circuit Four: Square Wave Response}{9}{}%
-\contentsline {subsubsection}{\numberline {5.4.1}Oscilloscope Image}{10}{}%
-\contentsline {subsubsection}{\numberline {5.4.2}Analysis}{10}{}%
-\contentsline {subsection}{\numberline {5.5}Circuit Five: RL Circuit Response}{10}{}%
-\contentsline {subsubsection}{\numberline {5.5.1}Oscilloscope Image}{11}{}%
-\contentsline {subsubsection}{\numberline {5.5.2}Analysis}{11}{}%
-\contentsline {section}{\numberline {6}Conclusion}{11}{}%
+\contentsline {subsection}{\numberline {3.1}RC Circuits}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}The Technique}{4}{}%
+\contentsline {subsection}{\numberline {3.2}RL Circuits}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}The Technique}{6}{}%
+\contentsline {subsection}{\numberline {3.3}The Shape of the Response}{6}{}%
+\contentsline {section}{\numberline {4}Experimental Procedures}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Circuit One: Charging (Growth)}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Circuit One: Discharging (Decay)}{8}{}%
+\contentsline {subsection}{\numberline {4.3}Circuit Three: RC with Square Wave Input}{9}{}%
+\contentsline {subsection}{\numberline {4.4}Circuit Four: RC Circuit with Adjusted Components}{10}{}%
+\contentsline {subsection}{\numberline {4.5}Circuit Five: RL Response to Square Wave}{11}{}%
+\contentsline {section}{\numberline {5}Results and Discussion}{11}{}%
+\contentsline {subsection}{\numberline {5.1}Circuit One: Charging Transient}{11}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Time Constant Analysis.}{12}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Voltmeter Resistance Estimate}{13}{}%
+\contentsline {subsection}{\numberline {5.2}Circuit One: Discharging}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Time Constant Analysis.}{14}{}%
+\contentsline {subsection}{\numberline {5.3}Circuit Three: Response to a Square Wave}{15}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Analysis}{16}{}%
+\contentsline {subsection}{\numberline {5.4}Circuit Four: Square Wave Response}{17}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}Analysis}{17}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}SPICE Simulation}{18}{}%
+\contentsline {subsection}{\numberline {5.5}Circuit Five: RL Circuit Response}{18}{}%
+\contentsline {subsubsection}{\numberline {5.5.1}Analysis}{19}{}%
+\contentsline {subsubsection}{\numberline {5.5.2}SPICE Simulation}{20}{}%
+\contentsline {section}{\numberline {6}Conclusion}{20}{}%

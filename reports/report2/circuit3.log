@@ -1,0 +1,14 @@
+LTspice 24.1.5 for Windows
+Circuit: Z:\home\art\school\ece2001\reports\report2\circuit3.net
+Start Time: Sat Mar 29 16:26:38 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.021 seconds.
+
+Files loaded:
+Z:\home\art\school\ece2001\reports\report2\circuit3.net
+
