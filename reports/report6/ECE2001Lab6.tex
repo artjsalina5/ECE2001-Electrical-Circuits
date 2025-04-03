@@ -10,7 +10,6 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{circuitikz}
-\usepackage{subfigure}
 \usepackage{caption}
 \usepackage{karnaugh-map}
 \usepackage{bm}
@@ -116,9 +115,12 @@ And has a quality factor $Q$:
 
 \section{Experimental Procedures}
 \subsection{Circuit One: RC High-Pass Filter}
+A $22nF$ capacitor was substituted in place of the $15nF$ capacitor.
 A high pass filter is formed when the output of an RC circuit is taken off the
-resistor. 
-Cutoff Frequency - 
+resistor. \\
+
+Cutoff Frequency - $2824.88Hz$\\
+Cutoff Frequency Phase - $52.01\circ$\\
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{e6_01}
 \end{figure}
@@ -131,8 +133,10 @@ Cutoff Frequency -
 
 \subsection{Circuit Two: RC Low-Pass Filter}
 A typical low-pass filter is formed when the output of an RC circuit is taken
-off the capacitor.
+off the capacitor.\\
 
+Cutoff Frequency - $4634.47Hz$
+Cutoff Frequency Phase - $-52.03\circ$
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{e6_02}
 \end{figure}
@@ -142,6 +146,8 @@ off the capacitor.
 \end{itemize}
 
 \subsection{Circuit Three: Parallel Capacitor Low Pass Filter}
+Cutoff Frequency: $1721.86Hz$
+Cutoff Frequency Phase: $-61.56$
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{e6_03}
@@ -151,6 +157,8 @@ off the capacitor.
 	\item Plot Bode plot of magnitude response
 \end{itemize}
 \subsection{Circuit Four Series RLC Bandpass Filter}
+\subsubsection{Resistor at $200\Omega$}
+Cutoff Frequencies:
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{e6_04}
@@ -159,29 +167,57 @@ off the capacitor.
 	\item Determine resonant frequency and bandwidth
 	\item Plot Bode plot of magnitude response
 \end{itemize}
-
+\subsubsection{Resistor at $2000\Omega$}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_05}
+\end{figure}
+\begin{itemize}
+	\item Determine resonant frequency and bandwidth
+	\item Plot Bode plot of magnitude response
+\end{itemize}
 \section{Results and Discussion}
 \subsection{Low-Pass Filter Analysis}
-[Insert oscilloscope and simulation images]
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bode1}
+\end{figure}
 \begin{itemize}
 	\item Compare theoretical cutoff with measured
 	\item Plot amplitude response and extract $-3\,\mathrm{dB}$ point
 \end{itemize}
 
 \subsection{High-Pass Filter Analysis}
-[Insert oscilloscope and simulation images]
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bode2}
+\end{figure}
 \begin{itemize}
 	\item Same analysis as low-pass
 	\item Note phase shift at low frequencies
 \end{itemize}
 
-\subsection{RLC Resonant Filter}
-[Insert scope screenshots and LTSpice waveform]
+\subsection{RC Parallel Filter}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bode3}
+\end{figure}
 \begin{itemize}
 	\item Compare calculated resonant frequency with observed
 	\item Discuss the role of $Q$ and peak amplitude
 \end{itemize}
 
+\subsection{RLC Bandpass Filter}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bode4}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bandbode}
+	\caption{Area of Interest}
+\end{figure}
+\subsection{RLC Low Pass Filter}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{e6_bode5}
+\end{figure}
 \section{Conclusion}
 This lab demonstrated the role of passive filters in shaping the frequency content of signals. First-order filters showed characteristic $-20\,\mathrm{dB/decade}$ roll-off near cutoff, while the second-order RLC circuit showed clear resonant behavior. Agreement between theory, simulation, and measurement confirms the behavior of these filters and prepares students for future work in frequency-selective networks and analog signal processing.
 \end{document}
