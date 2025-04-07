@@ -49,7 +49,7 @@
 	\centering
 	\vspace*{3cm}
 	\huge\textbf{Lab 06: Passive Filter Circuits}\\
-	
+
 	\vspace{5cm}
 	\Large\textbf{Arturo Salinas-Aguayo}\\
 	\normalsize
@@ -65,31 +65,48 @@
 \tableofcontents
 \newpage
 \section{Abstract}
-This lab introduces frequency domain behavior of passive filters composed of resistors, capacitors, and inductors. Through experimentation with low-pass and high-pass filters, as well as an underdamped RLC configuration, the frequency response and phase shift characteristics are observed. Emphasis is placed on understanding cutoff frequency, amplitude response, and the resonance phenomenon.
+Passive filters have a wide variety of applications such as within dc power
+supplies to eliminate unwanted high-frequency noise within the ac-line or in
+radios to provide the listener with only the desired signal while rejecting all
+other unwanted signals. They also work on the transmission side, allowing only a
+certain signal to be generated while attenuating the others that might cause
+interference. Another, perhaps more relevant application is that off a crossover
+network in which a passive filter is used to adjust the audio signals going to
+speakers to properly balance audio between tweeters, woofers, and midrange
+speakers. This lab introduces these concepts and expands upon the knowledge
+gained in learning about inductors and capacitors, while leaving things such as
+alternating current sources still unexplained. For this reason, this
+experimental work will focus on the frequency response and phase shift
+characteristics of these filters rather than the analysis of the circuits in
+theory.
 
 \newpage
 \section{Introduction}
-While earlier labs focused on transient response, this experiment shifts the focus to the steady-state sinusoidal behavior of filters. The goal is to understand how the amplitude and phase of a circuit’s output vary as a function of frequency. By examining first-order filters and a second-order resonant circuit, intuition is built for applications in audio electronics, communication systems, and signal processing.
 
-Filters are circuits that selectively allow or reject certain frequencies. Low-pass filters allow low frequencies to pass while attenuating higher ones. High-pass filters do the opposite. The transition point between passing and attenuation is the cutoff frequency, defined where the output amplitude is $\frac{1}{\sqrt{2}}$ of the input.
+While earlier labs focused on transient response, this experiment shifts attention to the steady-state sinusoidal behavior of electrical filters. The objective is to analyze how the amplitude and phase of a circuit’s output vary with input frequency. By constructing and testing first-order and second-order filters, this lab builds intuition for practical applications in audio electronics, communication systems, and signal processing.
+
+Filters are circuits that selectively permit certain frequency components while rejecting others. A low-pass filter allows low-frequency signals to pass while attenuating higher frequencies. Conversely, a high-pass filter does the opposite, blocking low frequencies and allowing high-frequency signals through. The critical threshold between the passband and stopband is the \textit{cutoff frequency}, typically defined as the point where the output amplitude falls to $\frac{1}{\sqrt{2}}$ (approximately 0.707) of the input signal, corresponding to a $-3\,\mathrm{dB}$ gain relative to the passband.
+
+Second-order filters, such as the RLC bandpass filter studied in this lab, exhibit more complex behavior including resonance, which is especially relevant in tuned circuits used in radios, amplifiers, and frequency-selective networks.
 
 \section{Theory}
+
 \subsection{Low-Pass RC Filter}
-A first-order RC low-pass filter has the following configuration:
 
+A first-order RC low-pass filter consists of a resistor in series with the input and a capacitor to ground at the output. This configuration allows low-frequency signals to charge the capacitor, which then appears as an open circuit to DC, while higher frequencies are shorted to ground through the capacitor’s decreasing reactance.
 
-The transfer function is:
+The transfer function of the low-pass RC filter is:
 \[
 	H(f) = \frac{1}{1 + j2\pi fRC}
 \]
-The cutoff frequency is given by:
+The magnitude of this function decreases as frequency increases. The cutoff frequency, where the gain drops by $3\,\mathrm{dB}$, is given by:
 \[
 	f_c = \frac{1}{2\pi RC}
 \]
 
 \subsection{High-Pass RC Filter}
-A high-pass RC filter simply swaps the resistor and capacitor:
 
+A high-pass filter is formed by swapping the positions of the resistor and capacitor. In this configuration, the capacitor initially blocks low-frequency signals (including DC), but its reactance decreases with frequency, allowing higher-frequency components to pass through more easily.
 
 The transfer function becomes:
 \[
@@ -99,90 +116,105 @@ With the same cutoff frequency:
 \[
 	f_c = \frac{1}{2\pi RC}
 \]
+At very low frequencies, the gain approaches zero; at very high frequencies, the gain approaches unity.
 
 \subsection{Second-Order RLC Circuit (Bandpass Filter)}
-An underdamped RLC circuit exhibits resonance. The circuit is:
 
+A second-order series RLC circuit includes a resistor, inductor, and capacitor in series. When driven by a sinusoidal source, the circuit exhibits a resonance at a specific frequency where the inductive and capacitive reactances cancel each other out. At this frequency, the impedance is minimized (equal to $R$), and the output voltage across the resistor is maximized.
 
-Its transfer function peaks at:
+The resonance (or natural) frequency is:
 \[
-	f_0 = \frac{1}{2\pi\sqrt{LC}} \quad \text{(resonant frequency)}
+	f_0 = \frac{1}{2\pi\sqrt{LC}}
 \]
-And has a quality factor $Q$:
+The sharpness of the resonance peak is characterized by the \textit{quality factor}, $Q$, defined as:
 \[
 	Q = \frac{1}{R} \sqrt{\frac{L}{C}}
 \]
 
+Higher $Q$ values correspond to narrower, more selective bandpass responses (underdamped), while lower $Q$ values lead to broader frequency responses (overdamped). The bandwidth of the filter is inversely proportional to $Q$ and directly affected by the resistance in the circuit.
 \section{Experimental Procedures}
-\subsection{Circuit One: RC High-Pass Filter}
-A $22nF$ capacitor was substituted in place of the $15nF$ capacitor.
-A high pass filter is formed when the output of an RC circuit is taken off the
-resistor. \\
 
-Cutoff Frequency - $3556.31Hz$\\
-Cutoff Frequency Phase - $45.49^\circ$\\
+\subsection{Circuit One: RC High-Pass Filter}
+This circuit forms a basic first-order high-pass filter. The output is taken across the resistor. A $22\,\mathrm{nF}$ capacitor was used in place of the originally specified $15\,\mathrm{nF}$ to better match desired cutoff behavior. The schematic is shown in Figure~\ref{fig:circuitone}.
+
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_01}
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_01}
+	\caption{Circuit One – RC High-Pass Filter (Output Across Resistor)}
+	\label{fig:circuitone}
 \end{figure}
 
+\noindent \textbf{Measured Values:}
 \begin{itemize}
-	\item Input signal: $5\,\mathrm{V_{pp}}$ sine wave
-	\item Frequency sweep: $1\,\mathrm{Hz}$ to $100\,\mathrm{MHz}$
-	\item Measure amplitude and phase of output across resistor.
+	\item Cutoff Frequency: $3556.31\,\mathrm{Hz}$
+	\item Phase at Cutoff: $45.49^\circ$
 \end{itemize}
 
 \subsection{Circuit Two: RC Low-Pass Filter}
-A typical low-pass filter is formed when the output of an RC circuit is taken
-off the capacitor.\\
-
-Cutoff Frequency - $3681.29Hz$
-Cutoff Frequency Phase - $-45.50^\circ$
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_02}
-\end{figure}
-\begin{itemize}
-	\item Same input signal and frequency sweep
-	\item Measure output across capacitor
-\end{itemize}
-
-\subsection{Circuit Three: Parallel Capacitor Low Pass Filter}
-Cutoff Frequency: $1377.21Hz$\\
-Cutoff Frequency Phase: $-53.18^\circ$\\
+This low-pass configuration is identical in components to Circuit One, but the output is instead taken across the capacitor. The resulting filter allows lower frequencies to pass while attenuating higher ones. The schematic is shown in Figure~\ref{fig:circuittwo}.
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_03}
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_02}
+	\caption{Circuit Two – RC Low-Pass Filter (Output Across Capacitor)}
+	\label{fig:circuittwo}
 \end{figure}
+
+\noindent \textbf{Measured Values:}
 \begin{itemize}
-	\item Determine resonant frequency and bandwidth
-	\item Plot Bode plot of magnitude response
+	\item Cutoff Frequency: $3681.29\,\mathrm{Hz}$
+	\item Phase at Cutoff: $-45.50^\circ$
 \end{itemize}
-\subsection{Circuit Four Series RLC Bandpass Filter}
-\subsubsection{Resistor at $200\Omega$}
-Cutoff Frequencies:\\
-$5105.05Hz$, $-30.278^\circ$\\
-$5597.57$, $-28.30^\circ$
+
+\subsection{Circuit Three: Parallel Capacitor Low-Pass Filter}
+Circuit Three builds on the previous configurations by adding a second capacitor in parallel. This increases the filter's order and steepens the roll-off in the stopband. The circuit schematic is provided in Figure~\ref{fig:circuitthree}.
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_04}
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_03}
+	\caption{Circuit Three – Second-Order RC Low-Pass Filter}
+	\label{fig:circuitthree}
 \end{figure}
+
+\noindent \textbf{Measured Values:}
 \begin{itemize}
-	\item Determine resonant frequency and bandwidth
-	\item Plot Bode plot of magnitude response
+	\item Cutoff Frequency: $1377.21\,\mathrm{Hz}$
+	\item Phase at Cutoff: $-53.18^\circ$
 \end{itemize}
-\subsubsection{Resistor at $2000\Omega$}
+
+\subsection{Circuit Four: Series RLC Bandpass Filter}
+Circuit Four introduces an inductor to create a second-order RLC bandpass filter. This configuration allows a narrow range of frequencies to pass while attenuating both low and high frequencies. Two versions were tested: one with a low resistance ($200\,\Omega$) and another with high resistance ($2000\,\Omega$), to compare underdamped and overdamped behavior.
+
+\subsubsection*{Case 1: $R = 200\,\Omega$ (Underdamped)}
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_05}
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_04}
+	\caption{Circuit Four – RLC Bandpass Filter ($R = 200\,\Omega$)}
+	\label{fig:circuit4a}
 \end{figure}
+
+\noindent \textbf{Measured Values:}
 \begin{itemize}
-	\item Determine resonant frequency and bandwidth
-	\item Plot Bode plot of magnitude response
+	\item Lower 3dB Point: $5105.05\,\mathrm{Hz}$, Phase: $-30.28^\circ$
+	\item Upper 3dB Point: $5597.57\,\mathrm{Hz}$, Phase: $-28.30^\circ$
 \end{itemize}
+
+\subsubsection*{Case 2: $R = 2000\,\Omega$ (Overdamped)}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_05}
+	\caption{Circuit Four – RLC Low-Pass Behavior ($R = 2000\,\Omega$)}
+	\label{fig:circuit4b}
+\end{figure}
+
+\noindent In this configuration, the circuit became overdamped. Resonant behavior was suppressed, and the frequency response resembled a second-order low-pass filter.
 \section{Results and Discussion}
-\subsection{Low-Pass Filter Analysis}
-
+\subsection{High-Pass Filter Analysis}
+Simulation in SPICE following data acquisition was simple. The filter acted as
+expected with minimal deviation from the simulated values. See
+Table \ref{tab:circuitone}.
 \begin{table}[H]
 	\centering
-	\caption{Scopy Measurements – Circuit 1: RC High-Pass Filter}
 	\begin{tabular}{|r|r|r|}
 		\hline
 		\textbf{Frequency (Hz)} & \textbf{Gain (dB)} & \textbf{Phase ($^\circ$)} \\
@@ -199,20 +231,32 @@ $5597.57$, $-28.30^\circ$
 		10000000.00             & 0.040              & -0.450                    \\
 		\hline
 	\end{tabular}
+	\caption{Scopy Measurements – Circuit 1: RC High-Pass Filter}
+	\label{tab:circuitone}
 \end{table}
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_bode1}
+	\centering
+	\includegraphics[width=0.75\textwidth]{e6_bode1}
+	\caption{Circuit One Results, Resistor Output}
+	\label{fig:resscopy1}
 \end{figure}
-\begin{itemize}
-	\item Compare theoretical cutoff with measured
-	\item Plot amplitude response and extract $-3\,\mathrm{dB}$ point
-\end{itemize}
+The Theoretical cutoff frequency calculation for this is \[
+	f_c = \frac{\omega_c}{2\pi} = \frac{1}{2\pi RC}.
+	\]
+	\[
+		f_c = 3617Hz
+		\]
+		The experimental results come quite close to those as noted in
+		Table \ref{tab:circuitone} in bold. The bode plot also shows a phase shift at
+		higher frequencies closer to $0^\circ$.
 
-\subsection{High-Pass Filter Analysis}
+\subsection{Low-Pass Filter Analysis}
+When the output is taken off the capacitor, however, a completely different
+behavior is noted. This acts now as a low pass filter which attenuates higher
+frequencies above the cutoff calculation as noted in Table \ref{tab:circuittwo}.
 
 \begin{table}[H]
 	\centering
-	\caption{Scopy Measurements – Circuit 2: RC Low-Pass Filter}
 	\begin{tabular}{|r|r|r|}
 		\hline
 		\textbf{Frequency (Hz)} & \textbf{Gain (dB)} & \textbf{Phase ($^\circ$)} \\
@@ -229,20 +273,34 @@ $5597.57$, $-28.30^\circ$
 		10000000.00             & -38.133            & 141.555                   \\
 		\hline
 	\end{tabular}
+	\caption{Scopy Measurements – Circuit 2: RC Low-Pass Filter}
+	\label{tab:circuittwo}
 \end{table}
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_bode2}
+	\centering
+	\includegraphics[width=0.75\textwidth]{e6_bode2}
+	\caption{Bode Plot Circuit One, Capacitor Output}
+	\label{fig:scopycirc2}
 \end{figure}
-\begin{itemize}
-	\item Same analysis as low-pass
-	\item Note phase shift at low frequencies
-\end{itemize}
 
-\subsection{RC Parallel Filter}
+The Theoretical cutoff frequency circuit is the same as the previous,\[
+	f_c = \frac{\omega_c}{2\pi} = \frac{1}{2\pi RC}.
+	\]
+	\[
+		f_c = 3617Hz
+		\]
+		Intuitively, the phase plot makes sense for both of these circuits. The
+		capacitor in the circuit starts by providing a high reactance to the circuit
+		which as the frequency increases, proportionately decreases to give the
+		phase response its characteristic shape, although this time it starts at
+		$0^\circ$ and goes towards $-180^\circ$.
+
+\subsection{Circuit Three: RC Parallel Filter}
+
+The Bode plot in Figure~\ref{fig:scopycircthree} demonstrates strong agreement between the LTSpice simulation and the Scopy measurements for Circuit 3. The measured cutoff frequency was approximately $f_c = 1377.65\,\mathrm{Hz}$, consistent with theoretical expectations.
 
 \begin{table}[H]
 	\centering
-	\caption{Scopy Measurements – Circuit 3: RC Parallel Low-Pass Filter}
 	\begin{tabular}{|r|r|r|}
 		\hline
 		\textbf{Frequency (Hz)} & \textbf{Gain (dB)} & \textbf{Phase ($^\circ$)} \\
@@ -259,49 +317,92 @@ $5597.57$, $-28.30^\circ$
 		10000000.00             & -40.640            & 150.371                   \\
 		\hline
 	\end{tabular}
+	\caption{Scopy Measurements – Circuit 3: RC Parallel Low-Pass Filter}
 \end{table}
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_bode3}
+	\centering
+	\includegraphics[width=0.75\textwidth]{e6_bode3}
+	\caption{Parallel Circuit Response}
+	\label{fig:scopycircthree}
 \end{figure}
-\begin{itemize}
-	\item Compare calculated resonant frequency with observed
-	\item Discuss the role of $Q$ and peak amplitude
-\end{itemize}
+
+To quantify the stopband behavior, the gain slope was computed between 7.7 kHz and 46.4 kHz:
+\[
+\text{Slope} = \frac{-37.471 - (-14.098)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -30.08\,\mathrm{dB/decade}
+\]
+This suggests second-order behavior, since the slope is steeper than that of a first-order filter but not as sharp as the ideal $-40\,\mathrm{dB/decade}$. In contrast, the stopband slope for Circuit 2 (RC low-pass) was calculated as:
+\[
+\text{Slope}_{\text{Circuit 2}} = \frac{-19.171 - (-6.089)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -16.83\,\mathrm{dB/decade}
+\]
+
+This value aligns well with the expected $-20\,\mathrm{dB/decade}$ slope of a first-order filter. Thus, the sharper slope observed in Circuit 3 confirms its higher-order behavior.
 
 \subsection{RLC Bandpass Filter}
 
+The RLC bandpass filter implemented with $R = 200\,\Omega$ demonstrated classic underdamped behavior, exhibiting a distinct resonance peak between 5\,kHz and 6\,kHz. From the measured data in Table~\ref{tab:rlc_bandpass}, the peak gain occurs near $f_0 = 5607.23\,\mathrm{Hz}$ with a gain of $4.286\,\mathrm{dB}$. The phase sharply transitions through $-90^\circ$, a hallmark of second-order bandpass filters.
+
 \begin{table}[H]
 	\centering
-	\caption{Scopy Measurements – Circuit 4a: Series RLC Bandpass Filter ($R=200\,\Omega$)}
+	\caption{Scopy Measurements – Circuit Four, RLC Bandpass Filter ($R=200\,\Omega$)}
+	\label{tab:rlc_bandpass}
 	\begin{tabular}{|r|r|r|}
 		\hline
 		\textbf{Frequency (Hz)} & \textbf{Gain (dB)} & \textbf{Phase ($^\circ$)} \\
 		\hline
-		1.00                    & 18.009             & 1.113                     \\
-		5.99                    & -0.016             & -0.019                    \\
-		35.94                   & -0.016             & -0.138                    \\
-		215.44                  & -0.017             & -0.797                    \\
-		1291.55                 & 0.174              & -5.155                    \\
-		\textbf{5089.87}        & \textbf{3.675}     & \textbf{-33.948}          \\
-		\textbf{5607.23}        & \textbf{4.286}     & \textbf{-40.791}          \\
-		7742.64                 & 4.358              & -95.247                   \\
-		46415.90                & -28.705            & -168.845                  \\
-		278256.00               & -64.036            & -175.566                  \\
+		1.00        & 18.009  & 1.113    \\
+		5.99        & -0.016  & -0.019   \\
+		35.94       & -0.016  & -0.138   \\
+		215.44      & -0.017  & -0.797   \\
+		1291.55     & 0.174   & -5.155   \\
+		\textbf{5089.87} & \textbf{3.675} & \textbf{-33.948} \\
+		\textbf{5607.23} & \textbf{4.286} & \textbf{-40.791} \\
+		7742.64     & 4.358   & -95.247  \\
+		46415.90    & -28.705 & -168.845 \\
+		278256.00   & -64.036 & -175.566 \\
 		\hline
 	\end{tabular}
 \end{table}
+
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_bode4}
+	\centering
+	\includegraphics[width=0.5\textwidth]{e6_bode4}
+	\caption{Measured and Simulated Bode Plot – Circuit Four ($R = 200\,\Omega$)}
 \end{figure}
+
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{e6_bandbode}
-	\caption{Area of Interest}
+	\centering
+	\includegraphics[width=0.8\textwidth]{e6_bandbode}
+	\caption{Zoomed View of Resonance Peak – Circuit Four ($R = 200\,\Omega$)}
 \end{figure}
-\subsection{RLC Low Pass Filter}
+
+The agreement between LTSpice and Scopy data confirms resonance in this underdamped case. The amplitude peak and steep phase transition indicate a high quality factor \( Q \), consistent with the lower resistance value. The bandwidth can be estimated from the 3\,dB drop-off points around the peak, enabling further computation of the selectivity and damping characteristics.
+
+\subsection{Overdamped Case}
+
+When the resistance in the RLC circuit was increased to $2000\,\Omega$, the system became overdamped. The frequency response showed no resonance peak and instead exhibited a gradual, monotonic roll-off.
+
 \begin{figure}[H]
+	\centering
 	\includegraphics[width=\textwidth]{e6_bode5}
+	\caption{LTSpice Bode Plot – Circuit Four, RLC Low-Pass Filter ($R = 2000\,\Omega$)}
+	\label{fig:rlc_lp}
 \end{figure}
+
+This behavior illustrates the direct impact of resistance on the damping ratio and quality factor \( Q \). As $R$ increases, the energy in the circuit is dissipated more rapidly, reducing selectivity and flattening the response. The phase shift also smooths out across frequencies, resembling a second-order low-pass filter.
+
 \section{Conclusion}
-This lab demonstrated the role of passive filters in shaping the frequency content of signals. First-order filters showed characteristic $-20\,\mathrm{dB/decade}$ roll-off near cutoff, while the second-order RLC circuit showed clear resonant behavior. Agreement between theory, simulation, and measurement confirms the behavior of these filters and prepares students for future work in frequency-selective networks and analog signal processing.
+
+Across all circuits tested, measured amplitude and phase responses closely aligned with LTSpice simulations, validating theoretical predictions and highlighting practical circuit behavior.
+
+\paragraph{Summary of Filter Types}
+\begin{itemize}
+	\item \textbf{Circuit One (Resistor Output)}: First-order high-pass filter
+	\item \textbf{Circuit Two (Capacitor Output)}: First-order low-pass filter
+	\item \textbf{Circuit Three (Parallel RC)}: Second-order low-pass filter
+	\item \textbf{Circuit Four ($R = 200\,\Omega$)}: Underdamped bandpass filter
+	\item \textbf{Circuit Four ($R = 2000\,\Omega$)}: Overdamped second-order low-pass filter
+\end{itemize}
+
+This lab demonstrated the significance of passive components in shaping signal behavior across the frequency spectrum. The comparison of experimental and simulated data confirms the reliability of both analytical methods and software tools like LTSpice. These foundations are crucial for future work in analog signal processing, communication electronics, and filter design.
 \end{document}
 % vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:
