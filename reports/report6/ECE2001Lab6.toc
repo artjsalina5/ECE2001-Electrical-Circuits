@@ -1,9 +1,10 @@
 \contentsline {section}{\numberline {1}Abstract}{2}{}%
 \contentsline {section}{\numberline {2}Introduction}{3}{}%
 \contentsline {section}{\numberline {3}Theory}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Low-Pass RC Filter}{3}{}%
-\contentsline {subsection}{\numberline {3.2}High-Pass RC Filter}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Second-Order RLC Circuit (Bandpass Filter)}{4}{}%
+\contentsline {subsection}{\numberline {3.1}A Quick Introduction to Filters}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Low-Pass RC Filter}{3}{}%
+\contentsline {subsection}{\numberline {3.3}High-Pass RC Filter}{4}{}%
+\contentsline {subsection}{\numberline {3.4}Second-Order RLC Circuit (Bandpass Filter)}{4}{}%
 \contentsline {section}{\numberline {4}Experimental Procedures}{4}{}%
 \contentsline {subsection}{\numberline {4.1}Circuit One: RC High-Pass Filter}{4}{}%
 \contentsline {subsection}{\numberline {4.2}Circuit Two: RC Low-Pass Filter}{5}{}%

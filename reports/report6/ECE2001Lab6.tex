@@ -70,7 +70,9 @@ supplies to eliminate unwanted high-frequency noise within the ac-line or in
 radios to provide the listener with only the desired signal while rejecting all
 other unwanted signals. They also work on the transmission side, allowing only a
 certain signal to be generated while attenuating the others that might cause
-interference. Another, perhaps more relevant application is that off a crossover
+interference.
+
+Another, perhaps more relevant application is that off a crossover
 network in which a passive filter is used to adjust the audio signals going to
 speakers to properly balance audio between tweeters, woofers, and midrange
 speakers. This lab introduces these concepts and expands upon the knowledge
@@ -87,9 +89,19 @@ While earlier labs focused on transient response, this experiment shifts attenti
 
 Filters are circuits that selectively permit certain frequency components while rejecting others. A low-pass filter allows low-frequency signals to pass while attenuating higher frequencies. Conversely, a high-pass filter does the opposite, blocking low frequencies and allowing high-frequency signals through. The critical threshold between the passband and stopband is the \textit{cutoff frequency}, typically defined as the point where the output amplitude falls to $\frac{1}{\sqrt{2}}$ (approximately 0.707) of the input signal, corresponding to a $-3\,\mathrm{dB}$ gain relative to the passband.
 
-Second-order filters, such as the RLC bandpass filter studied in this lab, exhibit more complex behavior including resonance, which is especially relevant in tuned circuits used in radios, amplifiers, and frequency-selective networks.
+Second-order filters, such as the RLC bandpass filter studied in this lab,
+exhibit more complex behavior including resonance, which is especially relevant
+in tuned circuits used in radios, amplifiers, and frequency-selective networks.
+
 
 \section{Theory}
+\subsection{A Quick Introduction to Filters}
+Filters are circuits which are purposefully designed to allow certain and reject
+others. Passive filters are studied in this experimental work which are
+constructed with resistors, capacitors, and inductors. At this point, the study
+of the frequency domain has been just introduced, so the math will not get too
+heavy just yet. However, utilizing SPICE simulation, the frequency response of
+circuits can be obtained and modeled accurately.
 
 \subsection{Low-Pass RC Filter}
 
@@ -132,6 +144,7 @@ The sharpness of the resonance peak is characterized by the \textit{quality fact
 \]
 
 Higher $Q$ values correspond to narrower, more selective bandpass responses (underdamped), while lower $Q$ values lead to broader frequency responses (overdamped). The bandwidth of the filter is inversely proportional to $Q$ and directly affected by the resistance in the circuit.
+
 \section{Experimental Procedures}
 
 \subsection{Circuit One: RC High-Pass Filter}
@@ -234,21 +247,22 @@ Table \ref{tab:circuitone}.
 	\caption{Scopy Measurements – Circuit 1: RC High-Pass Filter}
 	\label{tab:circuitone}
 \end{table}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{e6_bode1}
 	\caption{Circuit One Results, Resistor Output}
-	\label{fig:resscopy1}
 \end{figure}
+
 The Theoretical cutoff frequency calculation for this is \[
 	f_c = \frac{\omega_c}{2\pi} = \frac{1}{2\pi RC}.
-	\]
-	\[
-		f_c = 3617Hz
-		\]
-		The experimental results come quite close to those as noted in
-		Table \ref{tab:circuitone} in bold. The bode plot also shows a phase shift at
-		higher frequencies closer to $0^\circ$.
+\]
+\[
+	f_c = 3617Hz
+\]
+The experimental results come quite close to those as noted in
+Table \ref{tab:circuitone} in bold. The bode plot also shows a phase shift at
+higher frequencies closer to $0^\circ$.
 
 \subsection{Low-Pass Filter Analysis}
 When the output is taken off the capacitor, however, a completely different
@@ -285,19 +299,21 @@ frequencies above the cutoff calculation as noted in Table \ref{tab:circuittwo}.
 
 The Theoretical cutoff frequency circuit is the same as the previous,\[
 	f_c = \frac{\omega_c}{2\pi} = \frac{1}{2\pi RC}.
-	\]
-	\[
-		f_c = 3617Hz
-		\]
-		Intuitively, the phase plot makes sense for both of these circuits. The
-		capacitor in the circuit starts by providing a high reactance to the circuit
-		which as the frequency increases, proportionately decreases to give the
-		phase response its characteristic shape, although this time it starts at
-		$0^\circ$ and goes towards $-180^\circ$.
+\]
+\[
+	f_c = 3617Hz
+\]
+Intuitively, the phase plot makes sense for both of these circuits. The
+capacitor in the circuit starts by providing a high reactance to the circuit
+which as the frequency increases, proportionately decreases to give the
+phase response its characteristic shape, although this time it starts at
+$0^\circ$ and goes towards $-180^\circ$.
 
 \subsection{Circuit Three: RC Parallel Filter}
 
-The Bode plot in Figure~\ref{fig:scopycircthree} demonstrates strong agreement between the LTSpice simulation and the Scopy measurements for Circuit 3. The measured cutoff frequency was approximately $f_c = 1377.65\,\mathrm{Hz}$, consistent with theoretical expectations.
+The Bode plot in Figure~\ref{fig:scopycircthree} demonstrates strong agreement
+between the SPICE simulation and the Scopy measurements for Circuit 3. The
+measured cutoff frequency was approximately $f_c = 1377.65\,\mathrm{Hz}$.
 
 \begin{table}[H]
 	\centering
@@ -326,13 +342,14 @@ The Bode plot in Figure~\ref{fig:scopycircthree} demonstrates strong agreement b
 	\label{fig:scopycircthree}
 \end{figure}
 
-To quantify the stopband behavior, the gain slope was computed between 7.7 kHz and 46.4 kHz:
+To quantify the stopband behavior, the gain slope was computed between $7.7$ kHz
+and $46.4$ kHz.
 \[
-\text{Slope} = \frac{-37.471 - (-14.098)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -30.08\,\mathrm{dB/decade}
+	\text{Slope} = \frac{-37.471 - (-14.098)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -30.08\,\mathrm{dB/decade}
 \]
 This suggests second-order behavior, since the slope is steeper than that of a first-order filter but not as sharp as the ideal $-40\,\mathrm{dB/decade}$. In contrast, the stopband slope for Circuit 2 (RC low-pass) was calculated as:
 \[
-\text{Slope}_{\text{Circuit 2}} = \frac{-19.171 - (-6.089)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -16.83\,\mathrm{dB/decade}
+	\text{Slope}_{\text{Circuit 2}} = \frac{-19.171 - (-6.089)}{\log_{10}(46415.90) - \log_{10}(7742.64)} \approx -16.83\,\mathrm{dB/decade}
 \]
 
 This value aligns well with the expected $-20\,\mathrm{dB/decade}$ slope of a first-order filter. Thus, the sharper slope observed in Circuit 3 confirms its higher-order behavior.
@@ -349,16 +366,16 @@ The RLC bandpass filter implemented with $R = 200\,\Omega$ demonstrated classic 
 		\hline
 		\textbf{Frequency (Hz)} & \textbf{Gain (dB)} & \textbf{Phase ($^\circ$)} \\
 		\hline
-		1.00        & 18.009  & 1.113    \\
-		5.99        & -0.016  & -0.019   \\
-		35.94       & -0.016  & -0.138   \\
-		215.44      & -0.017  & -0.797   \\
-		1291.55     & 0.174   & -5.155   \\
-		\textbf{5089.87} & \textbf{3.675} & \textbf{-33.948} \\
-		\textbf{5607.23} & \textbf{4.286} & \textbf{-40.791} \\
-		7742.64     & 4.358   & -95.247  \\
-		46415.90    & -28.705 & -168.845 \\
-		278256.00   & -64.036 & -175.566 \\
+		1.00                    & 18.009             & 1.113                     \\
+		5.99                    & -0.016             & -0.019                    \\
+		35.94                   & -0.016             & -0.138                    \\
+		215.44                  & -0.017             & -0.797                    \\
+		1291.55                 & 0.174              & -5.155                    \\
+		\textbf{5089.87}        & \textbf{3.675}     & \textbf{-33.948}          \\
+		\textbf{5607.23}        & \textbf{4.286}     & \textbf{-40.791}          \\
+		7742.64                 & 4.358              & -95.247                   \\
+		46415.90                & -28.705            & -168.845                  \\
+		278256.00               & -64.036            & -175.566                  \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -375,7 +392,7 @@ The RLC bandpass filter implemented with $R = 200\,\Omega$ demonstrated classic 
 	\caption{Zoomed View of Resonance Peak – Circuit Four ($R = 200\,\Omega$)}
 \end{figure}
 
-The agreement between LTSpice and Scopy data confirms resonance in this underdamped case. The amplitude peak and steep phase transition indicate a high quality factor \( Q \), consistent with the lower resistance value. The bandwidth can be estimated from the 3\,dB drop-off points around the peak, enabling further computation of the selectivity and damping characteristics.
+The agreement between SPICE and Scopy data confirms resonance in this underdamped case. The amplitude peak and steep phase transition indicate a high quality factor \( Q \), consistent with the lower resistance value. The bandwidth can be estimated from the 3\,dB drop-off points around the peak, enabling further computation of the selectivity and damping characteristics.
 
 \subsection{Overdamped Case}
 
@@ -384,7 +401,7 @@ When the resistance in the RLC circuit was increased to $2000\,\Omega$, the syst
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{e6_bode5}
-	\caption{LTSpice Bode Plot – Circuit Four, RLC Low-Pass Filter ($R = 2000\,\Omega$)}
+	\caption{SPICE Bode Plot – Circuit Four, RLC Low-Pass Filter ($R = 2000\,\Omega$)}
 	\label{fig:rlc_lp}
 \end{figure}
 
@@ -403,6 +420,9 @@ Across all circuits tested, measured amplitude and phase responses closely align
 	\item \textbf{Circuit Four ($R = 2000\,\Omega$)}: Overdamped second-order low-pass filter
 \end{itemize}
 
-This lab demonstrated the significance of passive components in shaping signal behavior across the frequency spectrum. The comparison of experimental and simulated data confirms the reliability of both analytical methods and software tools like LTSpice. These foundations are crucial for future work in analog signal processing, communication electronics, and filter design.
+This lab demonstrated the significance of passive components in shaping signal
+behavior across the frequency spectrum. The comparison of experimental and
+simulated data confirms the reliability of both analytical methods and software
+tools like SPICE. These foundations are crucial for future work in analog signal processing, communication electronics, and filter design.
 \end{document}
 % vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:
