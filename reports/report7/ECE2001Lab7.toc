@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{}%
+\contentsline {section}{\numberline {2}Introduction}{3}{}%
+\contentsline {section}{\numberline {3}Theory}{3}{}%
+\contentsline {subsection}{\numberline {3.1}The Sallen--Key Filter}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Low-Pass Sallen--Key Filter}{4}{}%
+\contentsline {subsection}{\numberline {3.3}High-Pass Sallen--Key Filter}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Multiple-Feedback (MFB) Bandpass Filter}{5}{}%
+\contentsline {section}{\numberline {4}Experimental Procedures}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Circuit One: Sallen--Key Low-Pass Filter}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Circuit Two: Sallen--Key High-Pass Filter}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Circuit Three: Multiple-Feedback Bandpass Filter}{6}{}%
+\contentsline {section}{\numberline {5}Results and Discussion}{7}{}%
+\contentsline {subsection}{\numberline {5.1}Sallen--Key Low-Pass Filter}{7}{}%
+\contentsline {subsection}{\numberline {5.2}Sallen--Key High-Pass Filter}{8}{}%
+\contentsline {subsection}{\numberline {5.3}Multiple-Feedback Bandpass Filter}{10}{}%
+\contentsline {section}{\numberline {6}Conclusion}{11}{}%
