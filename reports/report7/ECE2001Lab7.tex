@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{amsmath}
+\usepackage{siunitx}
 \usepackage{array}
 \usepackage{amsfonts}
 \usepackage{fancyhdr}
@@ -48,7 +49,7 @@
 	\centering
 	\vspace*{3cm}
 	\huge\textbf{Lab 07: Active Filter Circuits}\\
-	
+
 	\vspace{5cm}
 	\Large\textbf{Arturo Salinas-Aguayo}\\
 	\normalsize
@@ -81,7 +82,7 @@ building a multiple-feed bandpass filter.
 The main characteristics of active filters aim to augment the passive filter
 response which had three main limitations: a max fixed gain factor of 1, the
 need for big and bulky inductors, and their poor response below the audio
-frequency range. 
+frequency range.
 
 Active filters, however, employ combinations of resistors,
 capacitors, and op amps. They are smaller and less expensive because they do not
@@ -94,7 +95,7 @@ a filter such that the subsequent stages do not load the previous stage with
 impedance.
 
 From the published paper, \emph{A Practical Method of Designing RC Active
-Filters} by R. P. Sallen and E. L. Key, a primary application of these filters
+	Filters} by R. P. Sallen and E. L. Key, a primary application of these filters
 is such that the frequency range below $30$\,cps is particularly not suited to
 allow the design of RLC circuits. This comes into play with applications such as
 the source range neutron detectors in the nuclear industry.
@@ -150,16 +151,16 @@ Figure~\ref{fig:gensallen} shows the generic Sallen--Key topology.
 
 In its low-pass form, the filter places two $RC$ branches in the negative
 feedback loop of the op amp. A well-known second-order unity-gain transfer
-function is
+function is: ($s = j\omega$)
 \begin{equation*}
-H(s) \;=\; \frac{1}{s^2\,C^2\,R^2 \;+\; 3\,s\,R\,C \;+\; 1},
+	H = \frac{1}{s^2R^2C^2 + 2sRC + 1}
 \end{equation*}
-yielding a cutoff frequency 
+yielding a cutoff or corner frequency
 \begin{equation*}
-f_c \;=\; \frac{1}{2\pi\,R\,C}.
+	f_c \;=\; \frac{1}{2\pi\,R\,C}.
 \end{equation*}
 
-Because it is a two-pole filter, it exhibits a $-40\,\mathrm{dB/decade}$ roll-off in the 
+Because it is a two-pole filter, it exhibits a $-40\,\mathrm{dB/decade}$ roll-off in the
 stopband and has a flatter passband than a comparable first-order filter.
 
 \subsection{High-Pass Sallen--Key Filter}
@@ -172,16 +173,16 @@ stopband and has a flatter passband than a comparable first-order filter.
 \end{figure}
 
 The high-pass configuration swaps the resistor and capacitor placements. Its
-transfer function is:
+transfer function is: ($s = j\omega$)
 \begin{equation*}
-H(s) \;=\; \frac{s^2\,C^2\,R^2}{\,s^2\,C^2\,R^2 \;+\; 3\,s\,R\,C \;+\; 1\,},
+	H = \frac{-s^2R^2C^2}{s^2R^2C^2 + 2sRC + 1}
 \end{equation*}
 with the same nominal cutoff frequency
 \begin{equation*}
-f_c \;=\; \frac{1}{2\pi\,R\,C}.
+	f_c \;=\; \frac{1}{2\pi\,R\,C}.
 \end{equation*}
 
-Ideally, it provides negligible gain at low frequencies and passes 
+Ideally, it provides negligible gain at low frequencies and passes
 higher-frequency components. However, this circuit will not behave only like a
 high pass filter, because once the reactive capacitor gets a certain high
 frequency, the capacitor will begin to act like a short circuit, and the op amp
@@ -198,18 +199,18 @@ Figure~\ref{fig:bode2}.
 \end{figure}
 
 The MFB bandpass filter is another second-order topology but arranges two
-resistors and two capacitors in a specific feedback loop. One well-known
-standard form of its transfer function is:
+resistors and two capacitors in a specific feedback loop. The transfer function can be derived using the node voltage method as such: ($s = j\omega$)
 \begin{equation*}
-H(s) \;=\; 
-\frac{\frac{s}{C\,R}}
-{\,s^2 + s\!\Bigl(\tfrac{1}{C\,R_2}\Bigr) + \tfrac{1}{C^2\,R_1\,R_2}\!}\,,
+	H(s) \;=\;
+	\frac{-sR_2C}
+	{s^2R_1R_2C^2 + 2sR_1C + 1}
 \end{equation*}
+
 which may be rewritten to match a standard second-order bandpass form:
 \begin{align*}
-f_0 &\;=\; \frac{1}{2\pi\,\sqrt{R_1\,R_2}\,C}, \\[6pt]
-Q   &\;=\; \sqrt{\frac{R_1}{R_2}}, \\[6pt]
-A_r &\;=\; -\frac{R_2}{2\,R_1}.
+	f_0 & = \frac{1}{2\pi,C\sqrt{R_1R_2}}     \\
+	A_r & = -\frac{R_2}{2R_1}                 \\
+	Q   & = \frac{1}{2}\sqrt{\frac{R_2}{R_1}}
 \end{align*}
 By choosing $R_1$, $R_2$, and $C$, one can specify the center frequency $f_0$ and
 quality factor $Q$. Because the peak amplitude occurs at $f_0$, we say the
@@ -222,12 +223,12 @@ a standard bandpass $Q = \tfrac{f_0}{\mathrm{BW}}$.
 
 Referring to Figure~\ref{fig:lowpass}, the expected cutoff frequency is
 \begin{equation*}
-f_c \;=\; 
-\frac{1}{2\pi\,R\,C}
-\;=\; 
-\frac{1}{2\pi \cdot 1000 \cdot (22\times10^{-9})}
-\;\approx\; 
-\SI{7234.32}{Hz}.
+	f_c \;=\;
+	\frac{1}{2\pi\,R\,C}
+	\;=\;
+	\frac{1}{2\pi \cdot 1000 \cdot (22\times10^{-9})}
+	\;\approx\;
+	\SI{7234.32}{Hz}.
 \end{equation*}
 
 The ADALM2000 and Scopy software was used in conjunction with the Network
@@ -236,39 +237,34 @@ Analyzer tool in order to scan the same frequency range simulated in SPICE.
 The high-pass version is constructed by simply interchanging the resistor and
 capacitor placements.
 \[
-R = \SI{1}{k\Omega}, \quad C = \SI{22}{nF}.
+	R = 1k\Omega, \quad C = 22nF.
 \]
-The nominal cutoff is the same ($\approx\SI{7.2}{kHz}$) as Circuit One.
+The nominal cutoff is the same ($\approx7.2kHz$) as Circuit One.
 
 \subsection{Circuit Three: Multiple-Feedback Bandpass Filter}
 A bandpass filter with center frequency near $\SI{12}{kHz}$ and $Q\approx 0.4$
 was designed using:
 \begin{equation*}
-R_1 = \SI{5.1}{k\Omega}, 
-\quad
-R_2 = \SI{3.3}{k\Omega}, 
-\quad
-C   = \SI{3.3}{nF}.
+	R_1 = \SI{47}{k\Omega},
+	\quad
+	R_2 = \SI{30}{k\Omega},
+	\quad
+	C   = \SI{330}{pF}.
 \end{equation*}
-The theoretical center frequency is
-\begin{equation*}
-f_0 \;=\; 
-\frac{1}{2\pi\,\sqrt{R_1 R_2}\,C}
-\;\approx\; 
-\SI{12}{kHz},
-\end{equation*}
-\begin{equation*}
-Q 
-\;=\;
-\sqrt{\frac{R_1}{R_2}}
-\;\approx\;
-\sqrt{\frac{5.1\,\mathrm{k}}{3.3\,\mathrm{k}}}
-\;\approx\;
-1.25,
-\end{equation*}
-The design specification was $Q = 0.4$, however in the constraints of physical
-hardware, in order to meet the proper frequency response characteristics,
-compromises were made.
+To achieve a quality factor of 0.4, we require
+\[
+	0.4 = \frac{1}{2}\sqrt{\frac{R_2}{R_1}} \implies \frac{R_2}{R_1} = 0.64
+\]
+This can be achieved with the standard resistor values of:
+\begin{align*}
+	R_1 & = 47k\Omega \\
+	R_2 & = 30k\Omega
+\end{align*}
+Then, to achieve a center frequency of $12kHz$, the following calculation is made:
+\begin{align*}
+	12kHz = \frac{1}{2\pi,C\sqrt{R_1R_2}} & \implies C = 353.2pF\
+\end{align*}
+The closest standard size capacitor is $330pF$.
 
 \section{Results and Discussion}
 
@@ -289,25 +285,25 @@ agreeing well with the simulation. As frequency increases beyond $f_c$, the
 filter attenuates at roughly $-40\,\mathrm{dB/decade}$.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|r|r|r|}
-\hline
-\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
-\hline
-1000.00   & -60.326 & 163.941 \\
-2781.14   & -23.818 & 143.144 \\
-7734.71   &  -9.505 & 101.996 \\
-21511.30  &  -2.699 &  46.583 \\
-59825.80  &  -7.910 & -18.496 \\
-167152.00 & -15.162 & -33.234 \\
-464872.00 & -20.953 &  -7.757 \\
-1292870.00 & -6.922 &  26.915 \\
-3595650.00 & -5.339 & -29.016 \\
-10000000.00 & -10.155 & -48.947 \\
-\hline
-\end{tabular}
-\caption{Circuit One: Sallen--Key Low-Pass Filter (Full Sweep)}
-\label{tab:C1_LPF_full}
+	\centering
+	\begin{tabular}{|r|r|r|}
+		\hline
+		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
+		\hline
+		1000.00            & -60.326            & 163.941            \\
+		2781.14            & -23.818            & 143.144            \\
+		7734.71            & -9.505             & 101.996            \\
+		21511.30           & -2.699             & 46.583             \\
+		59825.80           & -7.910             & -18.496            \\
+		167152.00          & -15.162            & -33.234            \\
+		464872.00          & -20.953            & -7.757             \\
+		1292870.00         & -6.922             & 26.915             \\
+		3595650.00         & -5.339             & -29.016            \\
+		10000000.00        & -10.155            & -48.947            \\
+		\hline
+	\end{tabular}
+	\caption{Circuit One: Sallen--Key Low-Pass Filter (Full Sweep)}
+	\label{tab:C1_LPF_full}
 \end{table}
 Nevertheless, the overall agreement is good. The phase plot also shows
 consistent behavior, with minor deviations above $\sim\SI{100}{kHz}$.
@@ -330,25 +326,25 @@ $\SI{1}{MHz}$, once the capacitor in the feedback loop becomes over-excited
 with the input frequency.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|r|r|r|}
-\hline
-\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
-\hline
-1000.00    & -22.093 &  -11.131 \\
-2782.56    &  -2.011 &  -30.668 \\
-7742.64    &  -4.424 &  -71.028 \\
-21544.30   & -14.624 & -121.834 \\
-59948.40   & -29.426 & -167.256 \\
-166810.00  & -30.978 & -274.000 \\
-464159.00  & -20.523 & -314.000 \\
-1291550.00 & -10.420 & -336.000 \\
-3593810.00 &  -8.838 &  -21.137 \\
-10000000.00 & -13.055 &  -46.393 \\
-\hline
-\end{tabular}
-\caption{Circuit Two: Sallen--Key High-Pass Filter (Full Sweep)}
-\label{tab:C2_HPF_full}
+	\centering
+	\begin{tabular}{|r|r|r|}
+		\hline
+		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
+		\hline
+		1000.00            & -22.093            & -11.131            \\
+		2782.56            & -2.011             & -30.668            \\
+		7742.64            & -4.424             & -71.028            \\
+		21544.30           & -14.624            & -121.834           \\
+		59948.40           & -29.426            & -167.256           \\
+		166810.00          & -30.978            & -274.000           \\
+		464159.00          & -20.523            & -314.000           \\
+		1291550.00         & -10.420            & -336.000           \\
+		3593810.00         & -8.838             & -21.137            \\
+		10000000.00        & -13.055            & -46.393            \\
+		\hline
+	\end{tabular}
+	\caption{Circuit Two: Sallen--Key High-Pass Filter (Full Sweep)}
+	\label{tab:C2_HPF_full}
 \end{table}
 
 Despite these high-frequency differences, the high-pass nature of the filter is
@@ -366,43 +362,43 @@ be a band-pass filter above this frequency range.
 \end{figure}
 
 Figure~\ref{fig:bode3} compares the measured bandpass response with the LTspice
-results. We observe a clear peak near $\sim\SI{11.5}{kHz}$, slightly below
+results. A clear peak is near $\sim\SI{11.5}{kHz}$, slightly below
 the theoretical design of $\SI{12}{kHz}$.
-
-Such a shift is common because resistor and capacitor tolerances can move the
-pole/zero locations. From the measured plot, the lower and upper
-$-3\,\mathrm{dB}$ frequencies (relative to the peak) can be estimated, giving a
-bandwidth $\mathrm{BW} = f_{\mathrm{c2}} - f_{\mathrm{c1}}$. Thus, the measured
-quality factor is
+The cutoff frequencies are approximately:
+\begin{align*}
+	f_H & = 36.5KHz \\
+	f_L & = 4.47KHz
+\end{align*}
+This produces a bandwidth of
 \[
-Q_{\text{meas}} \;=\; \frac{f_{0,\text{meas}}}{\mathrm{BW}}.
+	BW = 36.5KHz - 4.47KHz = 32.03KHz.
 \]
-If $f_{0,\text{meas}} \approx \SI{11.5}{kHz}$ and the $-3\,\mathrm{dB}$ band extends
-from about $\sim\SI{8}{kHz}$ to $\sim\SI{16}{kHz}$ (hypothetically), we get
-$\mathrm{BW} \approx \SI{8}{kHz}$, and hence $Q_{\text{meas}} \approx 1.44$.
-
-These values are within a reasonable range of the predicted $Q\approx1.25$.
+The ratio of the center frequency to the bandwidth is:
+\[
+	Q = \frac{f_0}{BW} = \frac{12KHz}{32.03KHz} \approx 0.375.
+\]
+This matches with the theoretical design characteristics within tolerances of $\pm{10\%}$.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|r|r|r|}
-\hline
-\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
-\hline
-1000.00    & -42.597 & -105.809 \\
-2781.14    & -14.424 & -129.427 \\
-7734.71    & -10.587 & -166.637 \\
-21511.30   & -11.297 & -211.000 \\
-59825.80   & -17.107 & -248.000 \\
-167152.00  & -24.102 & -276.000 \\
-464872.00  & -27.406 & -305.000 \\
-1292870.00 & -26.751 & -321.000 \\
-3595650.00 & -15.478 &  -16.181 \\
-10000000.00 & -21.823 &  -29.341 \\
-\hline
-\end{tabular}
-\caption{Circuit Three: Multiple-Feedback Bandpass Filter (Full Sweep)}
-\label{tab:C3_MFB_full}
+	\centering
+	\begin{tabular}{|r|r|r|}
+		\hline
+		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
+		\hline
+		100.00             & -41.052            & -99.186            \\
+		359.38             & -31.464            & -99.591            \\
+		1291.55            & -20.947            & -108.060           \\
+		4641.59            & -12.018            & -141.522           \\
+		16681.00           & -10.191            & 163.425            \\
+		59948.40           & -16.650            & 120.627            \\
+		215443.00          & -26.198            & 106.359            \\
+		774264.00          & -30.120            & 106.507            \\
+		2782560.00         & -26.087            & -55.487            \\
+		10000000.00        & -24.548            & 14.758             \\
+		\hline
+	\end{tabular}
+	\caption{Circuit Three: Multiple-Feedback Bandpass Filter}
+	\label{tab:C3_MFB_full}
 \end{table}
 
 In summary, the MFB bandpass filter demonstrates the expected peaked response
@@ -417,26 +413,26 @@ frequency response of each filter using the Network Analyzer in Scopy.
 
 \begin{itemize}
 
-\item \textbf{Sallen--Key Low-Pass:}\\
-The measured cutoff frequency closely matched the theoretical value
-($\sim\SI{7.2}{kHz}$), and the roll-off slope of $-40\,\mathrm{dB/decade}$ was
-evident. Minor high-frequency discrepancies were consistent with the op amp’s
-limited bandwidth.
+	\item \textbf{Sallen--Key Low-Pass:}\\
+	      The measured cutoff frequency closely matched the theoretical value
+	      ($\sim\SI{7.2}{kHz}$), and the roll-off slope of $-40\,\mathrm{dB/decade}$ was
+	      evident. Minor high-frequency discrepancies were consistent with the op amp’s
+	      limited bandwidth.
 
-\item \textbf{Sallen--Key High-Pass:}\\
-Good overall agreement in the passband and near the cutoff, although
-at low frequencies, a small DC offset appeared, demonstrating that real filters
-do not have a perfectly zero gain at DC. The high-pass nature was still clear,
-attenuating low frequencies significantly. At high frequencies, the filter fails
-to act as the reactive portions of the feedback loop take over, giving the
-output a band-pass like characteristic.
+	\item \textbf{Sallen--Key High-Pass:}\\
+	      Good overall agreement in the passband and near the cutoff, although
+	      at low frequencies, a small DC offset appeared, demonstrating that real filters
+	      do not have a perfectly zero gain at DC. The high-pass nature was still clear,
+	      attenuating low frequencies significantly. At high frequencies, the filter fails
+	      to act as the reactive portions of the feedback loop take over, giving the
+	      output a band-pass like characteristic.
 
-\item \textbf{MFB Bandpass Filter:}\\
-The center frequency measured around $\SI{11.5}{kHz}$, close to the designed
-$\SI{12}{kHz}$. The measured quality factor was in reasonable agreement with the
-theory, demonstrating how component tolerances and op amp non-idealities can
-slightly shift the response. The phase characteristics tracked the simulation
-below $\SI{100}{kHz}$, but diverged somewhat at higher frequencies.
+	\item \textbf{MFB Bandpass Filter:}\\
+	      The center frequency measured around $\SI{12}{kHz}$, close to the designed
+	      $\SI{12}{kHz}$. The measured quality factor was in reasonable agreement with the
+	      theory, demonstrating how component tolerances and op amp non-idealities can
+	      slightly shift the response. The phase characteristics tracked the simulation
+	      below $\SI{100}{kHz}$, but diverged somewhat at higher frequencies.
 \end{itemize}
 
 Overall, these experiments highlight the strengths of second-order active
