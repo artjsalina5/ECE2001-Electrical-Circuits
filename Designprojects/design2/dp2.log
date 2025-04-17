@@ -1,17 +1,17 @@
-LTspice 24.1.7 for Windows
+LTspice 24.1.5 for Windows
 Circuit: C:\home\ece2001\Designprojects\design2\dp2.net
-Start Time: Wed Apr 16 17:54:14 2025
+Start Time: Thu Apr 17 11:16:37 2025
 solver = Normal
-Maximum thread count: 32
+Maximum thread count: 8
 tnom = 27
 temp = 27
 method = trap
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.133 seconds.
+Total elapsed time: 0.129 seconds.
 
 Files loaded:
 C:\home\ece2001\Designprojects\design2\dp2.net
-C:\Users\Arturo\AppData\Local\LTspice\lib\cmp\standard.mos
+C:\Users\artjs\AppData\Local\LTspice\lib\cmp\standard.mos
 C:\Users\Arturo\Documents\LTspice\lm741\lm741.lib
-C:\Users\Arturo\AppData\Local\LTspice\lib\sub\UniversalOpAmp1.lib
+C:\Users\artjs\AppData\Local\LTspice\lib\sub\UniversalOpAmp1.lib
 
