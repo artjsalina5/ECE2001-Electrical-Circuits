@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.13)  1 MAY 2025 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.13)  1 MAY 2025 18:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,88 +598,103 @@ Package pdftex.def Info: ../../images/equalizer.png  used on input line 82.
 File: ../../images/equalizercircuit.png Graphic file (type png)
 <use ../../images/equalizercircuit.png>
 Package pdftex.def Info: ../../images/equalizercircuit.png  used on input line 89.
-(pdftex.def)             Requested size: 227.62204pt x 180.52742pt.
+(pdftex.def)             Requested size: 281.85587pt x 223.54718pt.
 
 
 [3 <../../images/equalizer.png> <../../images/equalizercircuit.png>]
-<../../images/07_multfeed.png, id=30, 547.2947pt x 238.64156pt>
+
+[4]
+<../../images/07_multfeed.png, id=35, 547.2947pt x 238.64156pt>
 File: ../../images/07_multfeed.png Graphic file (type png)
 <use ../../images/07_multfeed.png>
 Package pdftex.def Info: ../../images/07_multfeed.png  used on input line 124.
 (pdftex.def)             Requested size: 352.31625pt x 153.62584pt.
-
-
-[4]
 <../../images/tuning.png, id=36, 364.36125pt x 468.24937pt>
 File: ../../images/tuning.png Graphic file (type png)
 <use ../../images/tuning.png>
 Package pdftex.def Info: ../../images/tuning.png  used on input line 152.
-(pdftex.def)             Requested size: 234.8775pt x 301.84348pt.
+(pdftex.def)             Requested size: 328.82707pt x 422.59944pt.
 
 
 [5 <../../images/07_multfeed.png>]
 
-[6{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <../../images/tuning.png>]
-<../../images/mfbstage.png, id=49, 441.90094pt x 537.50812pt>
+[6 <../../images/tuning.png>]
+
+[7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<../../images/mfbstage.png, id=52, 441.90094pt x 537.50812pt>
 File: ../../images/mfbstage.png Graphic file (type png)
 <use ../../images/mfbstage.png>
 Package pdftex.def Info: ../../images/mfbstage.png  used on input line 216.
 (pdftex.def)             Requested size: 375.80544pt x 457.13011pt.
 
 
-[7]
+[8]
+<../../images/dp2summing.png, id=56, 493.0922pt x 380.17032pt>
+File: ../../images/dp2summing.png Graphic file (type png)
+<use ../../images/dp2summing.png>
+Package pdftex.def Info: ../../images/dp2summing.png  used on input line 229.
+(pdftex.def)             Requested size: 234.8775pt x 181.09325pt.
 
-[8 <../../images/mfbstage.png>]
 
-[9]
-<../../images/dp2max.png, id=60, 714.7503pt x 569.4876pt>
+[9 <../../images/mfbstage.png>]
+<../../images/dp2inverting.png, id=61, 387.69844pt x 203.25937pt>
+File: ../../images/dp2inverting.png Graphic file (type png)
+<use ../../images/dp2inverting.png>
+Package pdftex.def Info: ../../images/dp2inverting.png  used on input line 236.
+(pdftex.def)             Requested size: 234.8775pt x 123.14131pt.
+
+
+[10 <../../images/dp2summing.png> <../../images/dp2inverting.png>]
+
+[11]
+<../../images/dp2max.png, id=70, 714.7503pt x 569.4876pt>
 File: ../../images/dp2max.png Graphic file (type png)
 <use ../../images/dp2max.png>
-Package pdftex.def Info: ../../images/dp2max.png  used on input line 282.
-(pdftex.def)             Requested size: 469.75502pt x 374.29883pt.
+Package pdftex.def Info: ../../images/dp2max.png  used on input line 309.
+(pdftex.def)             Requested size: 375.80544pt x 299.43733pt.
 
 
-[10]
+[12]
 
-[11 <../../images/dp2max.png>]
-<../../images/dp2even.png, id=69, 714.7503pt x 570.2103pt>
+[13 <../../images/dp2max.png>]
+<../../images/dp2even.png, id=80, 714.7503pt x 570.2103pt>
 File: ../../images/dp2even.png Graphic file (type png)
 <use ../../images/dp2even.png>
-Package pdftex.def Info: ../../images/dp2even.png  used on input line 314.
-(pdftex.def)             Requested size: 469.75502pt x 374.77383pt.
+Package pdftex.def Info: ../../images/dp2even.png  used on input line 343.
+(pdftex.def)             Requested size: 375.80544pt x 299.81732pt.
 
 
-[12 <../../images/dp2even.png>]
-<../../images/dp2tuned.png, id=75, 714.7503pt x 570.2103pt>
+[14 <../../images/dp2even.png>]
+<../../images/dp2tuned.png, id=85, 714.7503pt x 570.2103pt>
 File: ../../images/dp2tuned.png Graphic file (type png)
 <use ../../images/dp2tuned.png>
-Package pdftex.def Info: ../../images/dp2tuned.png  used on input line 347.
-(pdftex.def)             Requested size: 469.75502pt x 374.77383pt.
+Package pdftex.def Info: ../../images/dp2tuned.png  used on input line 376.
+(pdftex.def)             Requested size: 375.80544pt x 299.81732pt.
 
 
-[13]
+[15 <../../images/dp2tuned.png>]
 
-[14 <../../images/dp2tuned.png>]
+[16]
 
-[15] (./ECE2001DP2.aux)
+[17] (./ECE2001DP2.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-11-02>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 36956 strings out of 473330
- 956110 string characters out of 5723871
- 1535507 words of memory out of 5000000
- 59732 multiletter control sequences out of 15000+600000
+ 36986 strings out of 473330
+ 956864 string characters out of 5723871
+ 1536643 words of memory out of 5000000
+ 59762 multiletter control sequences out of 15000+600000
  569886 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,107p,478b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ECE2001DP2.pdf (16 pages, 1397901 bytes).
+ 99i,12n,107p,661b,711s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on ECE2001DP2.pdf (18 pages, 1456271 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

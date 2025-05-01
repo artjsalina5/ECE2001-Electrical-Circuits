@@ -5,14 +5,18 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Bandwidth}{4}{}%
 \contentsline {subsubsection}{\numberline {3.1.2}Normalization}{4}{}%
 \contentsline {subsubsection}{\numberline {3.1.3}Cutoff Frequency}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Multiple-Feedback (MFB) Bandpass Filter}{4}{}%
-\contentsline {subsection}{\numberline {3.3}Bass Band}{6}{}%
-\contentsline {subsection}{\numberline {3.4}Midrange Band}{7}{}%
-\contentsline {subsection}{\numberline {3.5}Treble Band}{7}{}%
-\contentsline {section}{\numberline {4}Gain Control Implementation}{8}{}%
-\contentsline {section}{\numberline {5}Experimental Procedures}{10}{}%
-\contentsline {section}{\numberline {6}Results and Discussion}{10}{}%
-\contentsline {subsection}{\numberline {6.1}Max Value Configuration}{10}{}%
-\contentsline {subsection}{\numberline {6.2}Even Value Configuration}{12}{}%
-\contentsline {subsection}{\numberline {6.3}Tuned Configuration}{13}{}%
-\contentsline {section}{\numberline {7}Conclusion}{15}{}%
+\contentsline {subsection}{\numberline {3.2}Multiple-Feedback (MFB) Bandpass Filter}{5}{}%
+\contentsline {subsection}{\numberline {3.3}Tuning the MFB Bandpass Filter}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Component Selection, Active Filter Stage}{7}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Bass Band}{7}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Midrange Band}{7}{}%
+\contentsline {subsubsection}{\numberline {3.4.3}Treble Band}{8}{}%
+\contentsline {subsection}{\numberline {3.5}Gain Control Implementation}{9}{}%
+\contentsline {subsection}{\numberline {3.6}Component Selection, Gain Control Stage}{11}{}%
+\contentsline {section}{\numberline {4}Experimental Procedures}{12}{}%
+\contentsline {section}{\numberline {5}Results and Discussion}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Max Value Configuration}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Even Value Configuration}{13}{}%
+\contentsline {subsection}{\numberline {5.3}Tuned Configuration}{15}{}%
+\contentsline {subsection}{\numberline {5.4}Error Analysis}{16}{}%
+\contentsline {section}{\numberline {6}Conclusion}{16}{}%

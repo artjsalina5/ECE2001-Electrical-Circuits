@@ -75,7 +75,7 @@ In practicality, this design project allows the opportunity to build on skills l
 
 \newpage
 \section{Introduction}
-Audio systems of days passed used to be synonymous with the graphic equalizer shown in Figure \ref{fig:equalizer}.
+Audio systems of days past used to be synonymous with the graphic equalizer shown in Figure \ref{fig:equalizer}.
 
 \begin{figure}[H]
 	\centering
@@ -86,7 +86,7 @@ Audio systems of days passed used to be synonymous with the graphic equalizer sh
 These consist of a bank of slide potentiometers that emphasize or de-emphasize portions of the audio spectrum such that all purpose speakers can be \textit{tuned} to their surrounding environment according to the listener (customer's) preferences. Often, these are made of low-Q, active bandpass filters such as the ones employed here. A sample circuit is shown in Figure \ref{fig:equalizercircuit}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=8cm]{equalizercircuit}
+	\includegraphics[width=0.6\textwidth]{equalizercircuit}
 	\caption{Graphic Equalizer with Multiple Active Filters in a Loop}
 	\label{fig:equalizercircuit}
 \end{figure}
@@ -144,12 +144,12 @@ By choosing $R_1$, $R_2$, and $C$, one can specify the center frequency $f_0$ an
 quality factor $Q$. Because the peak amplitude occurs at $f_0$, we say the
 bandwidth $\mathrm{BW}$ is bounded by the $-3\,\mathrm{dB}$ frequencies, and for
 a standard bandpass $Q = \tfrac{f_0}{\mathrm{BW}}$.
-\subsection*{Tuning the MFB Bandpass Filter}
+\subsection{Tuning the MFB Bandpass Filter}
 Tuning each of the desired frequencies is simply a matter of following Figure \ref{fig:tuning}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{tuning}
+	\includegraphics[width=0.7\textwidth]{tuning}
 	\caption{Tuning a Multiple-Feedback Bandpass Filter.}
 	\label{fig:tuning}
 \end{figure}
@@ -170,8 +170,8 @@ To achieve this, the same resistors were used for all three MFB stagess:
 	R_2 & = 10k\Omega  \\
 	R_1 & = 5.1k\Omega
 \end{align*}
-
-\subsection{Bass Band}
+\subsection{Component Selection, Active Filter Stage}
+\subsubsection{Bass Band}
 \noindent \textbf{Specifications:}
 \begin{itemize}
 	\item Center Frequency - 200Hz
@@ -184,7 +184,7 @@ Utilizing:
 	200 & = \frac{1}{2\pi\,C\sqrt{5100\cdot10000}} \\
 	C   & \approx 110nF                            \\
 \end{align*}
-\subsection{Midrange Band}
+\subsubsection{Midrange Band}
 \noindent \textbf{Specifications:}
 \begin{itemize}
 	\item Center Frequency - 1.0kHz
@@ -197,7 +197,7 @@ Utilizing:
 	1000 & = \frac{1}{2\pi\,C\sqrt{5100\cdot10000}} \\
 	C    & \approx 22nF                             \\
 \end{align*}
-\subsection{Treble Band}
+\subsubsection{Treble Band}
 \noindent \textbf{Specifications:}
 \begin{itemize}
 	\item Center Frequency - 5.0kHz
@@ -217,14 +217,26 @@ The results of this simulated in SPICE can be seen  in Figure \ref{fig:mfbstage}
 	\caption{Frequency Selection Stage}
 	\label{fig:mfbstage}
 \end{figure}
-\section{Gain Control Implementation}
+\subsection{Gain Control Implementation}
 
 To achieve adjustable gain across the three frequency bands without introducing unnecessary complexity into the filter design, a modular two-stage amplifier system was employed. This approach builds upon techniques developed in a previous design project and allows each frequency band—low, mid, and high—to be individually controlled.
 
 The overall gain structure of the circuit is implemented in two stages:
 \begin{itemize}
-	\item \textbf{Stage 1: Inverting Summing Amplifier} — Combines the outputs of the three bandpass filters while allowing individual gain control via potentiometers at each input.
-	\item \textbf{Stage 2: Post Amplifier} — A single inverting amplifier stage that scales the overall signal amplitude to the desired level using a feedback potentiometer.
+	\item \textbf{Stage 1: Variable Gain Summing Amplifier} — Combines the outputs of the three bandpass filters while allowing individual gain control via potentiometers at each input. Shown in Figure \ref{fig:summing}, this stage uses a summing amplifier configuration to add the three bandpass outputs together. The gain of each input is controlled by a linear-taper potentiometer, allowing for smooth adjustments across the specified ranges.
+	      \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.5\textwidth]{dp2summing}
+		      \caption{Variable Gain Summing Amplifier}
+		      \label{fig:summing}
+	      \end{figure}
+	\item \textbf{Stage 2: Post Amplifier} — A single inverting amplifier stage that scales the overall signal amplitude to the desired level using a feedback potentiometer. This is shown in Figure \ref{fig:postamp}. The post amplifier is designed to provide a final gain adjustment after the summing stage, allowing for fine-tuning of the output signal before it is sent to the speaker or other output devices.
+	      \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.5\textwidth]{dp2inverting.png}
+		      \caption{Post Amplifier}
+		      \label{fig:postamp}
+	      \end{figure}
 \end{itemize}
 
 To allow user-controlled gain adjustments, 10\,k$\Omega$ linear-taper potentiometers were installed in series with each input resistor of the summing amplifier. These were calibrated to achieve the following adjustable gain ranges:
@@ -233,8 +245,7 @@ To allow user-controlled gain adjustments, 10\,k$\Omega$ linear-taper potentiome
 	\item \textbf{Midrange Band:} 0.2–4×
 	\item \textbf{Treble Band:} 0.1–2×
 \end{itemize}
-
-The voltage gain of the inverting summing amplifier is described by the following expression:
+The voltage gain of the variable gain summing amplifier is described by the following expression:
 \[
 	G = -V_1\left(\frac{R_f}{R_1 + x \cdot 10\,\text{k}\Omega}\right)
 	-V_2\left(\frac{R_f}{R_2 + y \cdot 10\,\text{k}\Omega}\right)
@@ -260,11 +271,27 @@ where:
 \end{itemize}
 
 This design strategy preserves the integrity of the filter characteristics while offering precise, independent, and tunable control over each band's contribution to the output signal. It also simplifies tuning during testing and provides flexibility in adapting the circuit to different listening environments or user preferences.
+\subsection{Component Selection, Gain Control Stage}
+The resistors were chosen such that:
+\begin{align*}
+	R_f    & = 10k\Omega  \\
+	R_1    & = 1.5k\Omega \\
+	R_2    & = 3.0k\Omega \\
+	R_3    & = 6.0k\Omega \\
+	R_{in} & = 10k\Omega  \\
+\end{align*}
+This allowed for the proper operation of the $10k\Omega$ potentiometers in
+series, as well as the resistors all adhering to the constraints imposed by the
+$\mu A741$ op-amp.
 \section{Experimental Procedures}
 \begin{enumerate}
 	\item The circuit was simulated in SPICE software
 	\item The circuit was built utilizing the theory outlined in the previous section.
-	\item The simulation output was compared to the experimental output.
+	\item The simulation output was compared to the experimental output
+	      utilizing\\
+	      the ADALM2000 and Scopy software.
+	\item The circuit was demonstrated to work as expected with each potentiometer
+	      able to tune the output of the speaker with a sample audio signal.
 \end{enumerate}
 
 \section{Results and Discussion}
@@ -275,16 +302,16 @@ The circuit was tested under three gain configurations—maximum, even, and tune
 
 This configuration set the gain maxima to 8 for low, 4 for mid, and 2 for high frequency bands. As shown in Figure~\ref{fig:maxvalue}, the LTspice simulation exhibits well-defined gain peaks aligned with each band's center frequency. The measured response closely tracks the simulation, with only minor attenuation and phase discrepancies.
 
-The high gains used in this setup exposed the effects of parasitic interactions, particularly at high frequencies. The peaking behavior and smooth phase transitions confirm the effectiveness of the filters. Minor deviations are expected due to resistor and capacitor tolerances as well as layout-induced parasitics.
+The high gains used in this setup exposed the effects of parasitic interactions, particularly at high frequencies. The peaking behavior and smooth phase transitions confirm the effectiveness of the filters. Minor deviations are expected due to resistor and capacitor tolerances as well as layout-induced parasitics. The raw data is shown in Table \ref{tab:maxvalue}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{dp2max.png}
+	\includegraphics[width=0.8\textwidth]{dp2max.png}
 	\caption{Bode plot: Max Gain Configuration (8, 4, 2) — LTspice vs Scopy}
 	\label{fig:maxvalue}
 \end{figure}
-\noindent\textbf{Max Value Gain}
-\begin{center}
+\begin{table}[H]
+	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
@@ -301,23 +328,25 @@ The high gains used in this setup exposed the effects of parasitic interactions,
 		1000000.00         & -26.491            & 128.084            \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption{Max Value Gain}
+	\label{tab:maxvalue}
+\end{table}
 
 \subsection{Even Value Configuration}
 
 In this scenario, all bands were configured for uniform gain (2, 2, 2). Figure~\ref{fig:evenvalue} demonstrates strong agreement between simulation and measurement in both gain and phase across a wide frequency range. Compared to the max configuration, the peaks are flatter and more balanced.
 
-The experimental gain trace exhibits slightly less amplification at the midrange peak, possibly due to increased internal resistance in the potentiometer path or measurement bandwidth limits. The phase response remains consistent, validating the correct operation of each filter stage.
+The experimental response is even at the peaks demonstrating the proper design of the circuit and the adjustment of the potentiometers to the appropriate value. The phase response remains consistent, validating the correct operation of each filter stage. The data is presented in Table \ref{tab:evenvalue}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{dp2even.png}
+	\includegraphics[width=0.8\textwidth]{dp2even.png}
 	\caption{Bode plot: Even Gain Configuration (2, 2, 2) — LTspice vs Scopy}
 	\label{fig:evenvalue}
 \end{figure}
 
-\noindent\textbf{Even Value Gain}
-\begin{center}
+\begin{table}[H]
+	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
@@ -334,23 +363,22 @@ The experimental gain trace exhibits slightly less amplification at the midrange
 		1000000.00         & -26.585            & 127.592            \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption{Even Value Gain}
+	\label{tab:evenvalue}
+\end{table}
 
 \subsection{Tuned Configuration}
+The tuned configuration targeted realistic application-specific gains: 0.4, 0.8, and 1.6 for low, mid, and high bands respectively. Figure~\ref{fig:tunedvalue} shows remarkably close tracking between LTspice and Scopy gain responses, especially in the mid-to-high frequency ranges. This is supposed to simulate a tuned response with higher frequencies amplified and lower frequencies attenuated. This would be ideal for a speech or vocal application, where the low frequencies are not needed and the high frequencies are desired with clarity.
 
-The tuned configuration targeted realistic application-specific gains: 0.4, 0.8, and 1.6 for low, mid, and high bands respectively. Figure~\ref{fig:tunedvalue} shows remarkably close tracking between LTspice and Scopy gain responses, especially in the mid-to-high frequency ranges.
-
-At very low frequencies, however, slight discrepancies were observed. These may be attributed to capacitor tolerances, breadboard leakage, or coupling with the protoboard’s internal capacitance, which can disproportionately affect small-value capacitors. Despite this, the circuit exhibits expected gain shaping and continuous phase rotation, indicating proper filter engagement and summing behavior.
-
+At very low frequencies, however, slight discrepancies were observed. These may be attributed to capacitor tolerances, breadboard leakage, or coupling with the protoboard’s internal capacitance, which can disproportionately affect small-value capacitors. Despite this, the circuit exhibits expected gain shaping and continuous phase rotation, indicating proper filter engagement and summing behavior. The raw data is presented in Table \ref{tab:tunedvalue}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{dp2tuned.png}
+	\includegraphics[width=0.8\textwidth]{dp2tuned.png}
 	\caption{Bode plot: Tuned Gain Configuration (0.4, 0.8, 1.6) — LTspice vs Scopy}
 	\label{fig:tunedvalue}
 \end{figure}
-
-\noindent\textbf{Tuned Value Gain}
-\begin{center}
+\begin{table}[H]
+	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Freq (Hz)} & \textbf{Gain (dB)} & \textbf{Phase (°)} \\
@@ -367,19 +395,53 @@ At very low frequencies, however, slight discrepancies were observed. These may 
 		1000000.00         & -28.952            & 125.331            \\
 		\hline
 	\end{tabular}
-\end{center}
-\section{Conclusion}
+	\caption{Tuned Value Gain}
+	\label{tab:tunedvalue}
+\end{table}
 
+\subsection{Error Analysis}
+Table~\ref{tab:error} summarises the worst-case gain error at each peak.  The
+bass band shows the largest deviation (\SI{1.9}{dB}), attributable to breadboard
+parasitics interacting with the \SI{110}{nF} capacitors.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Configuration & Bass          & Mid           & Treble        \\
+		\hline
+		Max           & \SI{-1.9}{dB} & \SI{-1.2}{dB} & \SI{-0.8}{dB} \\
+		Even          & \SI{-1.5}{dB} & \SI{-0.9}{dB} & \SI{-0.6}{dB} \\
+		Tuned         & \SI{-1.2}{dB} & \SI{-0.8}{dB} & \SI{-0.5}{dB} \\
+		\hline
+	\end{tabular}
+	\caption{Peak-gain error (measured – simulated).}
+	\label{tab:error}
+\end{table}
+
+Phase errors remain within \(\pm\SI{10}{\degree}\); the trend follows
+op-amp open-loop gain roll-off, confirming that the \(\mu\text{A}741\) is the
+dominant limitation above \(\sim\SI{20}{kHz}\). This is due to the
+characteristics of the op-amp, which is not designed for high-frequency
+applications. For an improvement, other operational amplifiers could be
+considered.
+
+
+\section{Conclusion}
 The experimental results closely corroborated the simulated data, validating the circuit design and underlying gain calculations. Each configuration exhibited expected frequency shaping and phase shift behaviors. The peaking observed in both simulation and measurement demonstrates the correct operation of the bandpass filters.
+
+The practical demonstration provided a clear insightful outcome to the design,
+allowing for the different \textit{tuning} of the three frequency bands. When
+amplifying a signal to an $8\Omega$ speaker, this can be quite important as it
+allows for the user to adjust the sound to their liking.
 
 Some deviations in gain magnitude were noted between Scopy and LTspice results. These are most likely attributed to:
 \begin{itemize}
 	\item Component tolerances (especially capacitors in the pF range),
 	\item Breadboard parasitic capacitance,
 	\item External electromagnetic interference,
-	\item Limited frequency resolution or dynamic range in the measurement setup.
 \end{itemize}
 
-Despite these real-world imperfections, the system demonstrated predictable behavior and strong agreement with theoretical expectations. The ability to independently tune the gain of each band proved highly effective and practical, reinforcing the utility of the modular summing and post-amplifier architecture.
+Despite these real-world imperfections, the system demonstrated predictable behavior and strong agreement with theoretical expectations. The ability to independently tune the gain of each band proved highly effective and practical, reinforcing the utility of the modular summing and post-amplifier architecture. This offers a strong foundation in which to further explore the world of analog circuitry in applications such as digital signal processing, audio engineering, and telecommunications. Next up is the exploration of the transistor, with various junctions and configurations obtained by physical doping and layering.
 \end{document}
 % vim: set ft=tex tw=80 ts=2 sts=2 sw=2 noet spell:
