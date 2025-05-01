@@ -264,7 +264,7 @@ Then, to achieve a center frequency of $12kHz$, the following calculation is mad
 \begin{align*}
 	12kHz = \frac{1}{2\pi,C\sqrt{R_1R_2}} & \implies C = 353.2pF\
 \end{align*}
-The closest standard size capacitor is $330pF$.
+The closest standard size capacitor is $330pF$. See Figure~\ref{fig:multfeed} for the amplitude response.
 
 \section{Results and Discussion}
 
@@ -375,9 +375,9 @@ This produces a bandwidth of
 \]
 The ratio of the center frequency to the bandwidth is:
 \[
-	Q = \frac{f_0}{BW} = \frac{12KHz}{32.03KHz} \approx 0.375.
+	Q = \frac{f_0}{BW} = \frac{11.5KHz}{32.03KHz} \approx 0.359.
 \]
-This matches with the theoretical design characteristics within tolerances of $\pm{10\%}$.
+This aligns with the theoretical design characteristics within tolerances of $\pm{10\%}$.
 
 \begin{table}[H]
 	\centering
@@ -428,7 +428,7 @@ frequency response of each filter using the Network Analyzer in Scopy.
 	      output a band-pass like characteristic.
 
 	\item \textbf{MFB Bandpass Filter:}\\
-	      The center frequency measured around $\SI{12}{kHz}$, close to the designed
+	      The center frequency measured around $\SI{11.5}{kHz}$, close to the designed
 	      $\SI{12}{kHz}$. The measured quality factor was in reasonable agreement with the
 	      theory, demonstrating how component tolerances and op amp non-idealities can
 	      slightly shift the response. The phase characteristics tracked the simulation

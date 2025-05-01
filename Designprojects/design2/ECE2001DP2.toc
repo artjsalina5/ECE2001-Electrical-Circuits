@@ -9,7 +9,10 @@
 \contentsline {subsection}{\numberline {3.3}Bass Band}{6}{}%
 \contentsline {subsection}{\numberline {3.4}Midrange Band}{7}{}%
 \contentsline {subsection}{\numberline {3.5}Treble Band}{7}{}%
-\contentsline {subsection}{\numberline {3.6}Amplification}{8}{}%
-\contentsline {section}{\numberline {4}Experimental Procedures}{9}{}%
-\contentsline {section}{\numberline {5}Results and Discussion}{9}{}%
-\contentsline {section}{\numberline {6}Conclusion}{9}{}%
+\contentsline {section}{\numberline {4}Gain Control Implementation}{8}{}%
+\contentsline {section}{\numberline {5}Experimental Procedures}{10}{}%
+\contentsline {section}{\numberline {6}Results and Discussion}{10}{}%
+\contentsline {subsection}{\numberline {6.1}Max Value Configuration}{10}{}%
+\contentsline {subsection}{\numberline {6.2}Even Value Configuration}{12}{}%
+\contentsline {subsection}{\numberline {6.3}Tuned Configuration}{13}{}%
+\contentsline {section}{\numberline {7}Conclusion}{15}{}%
