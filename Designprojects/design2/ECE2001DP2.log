@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  23 APR 2025 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.23)  23 APR 2025 15:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,17 +607,18 @@ Package pdftex.def Info: ../../images/equalizercircuit.png  used on input line 8
 
 
 [3 <../../images/equalizer.png> <../../images/equalizercircuit.png>]
-
-[4]
-<../../images/07_multfeed.png, id=36, 547.2947pt x 238.64156pt>
+<../../images/07_multfeed.png, id=30, 547.2947pt x 238.64156pt>
 File: ../../images/07_multfeed.png Graphic file (type png)
 <use ../../images/07_multfeed.png>
-Package pdftex.def Info: ../../images/07_multfeed.png  used on input line 137.
+Package pdftex.def Info: ../../images/07_multfeed.png  used on input line 124.
 (pdftex.def)             Requested size: 352.31625pt x 153.62584pt.
-<../../images/tuning.png, id=37, 364.36125pt x 468.24937pt>
+
+
+[4]
+<../../images/tuning.png, id=36, 364.36125pt x 468.24937pt>
 File: ../../images/tuning.png Graphic file (type png)
 <use ../../images/tuning.png>
-Package pdftex.def Info: ../../images/tuning.png  used on input line 165.
+Package pdftex.def Info: ../../images/tuning.png  used on input line 152.
 (pdftex.def)             Requested size: 234.8775pt x 301.84348pt.
 
 
@@ -627,7 +628,7 @@ Package pdftex.def Info: ../../images/tuning.png  used on input line 165.
 <../../images/mfbstage.png, id=49, 441.90094pt x 537.50812pt>
 File: ../../images/mfbstage.png Graphic file (type png)
 <use ../../images/mfbstage.png>
-Package pdftex.def Info: ../../images/mfbstage.png  used on input line 229.
+Package pdftex.def Info: ../../images/mfbstage.png  used on input line 216.
 (pdftex.def)             Requested size: 375.80544pt x 457.13011pt.
 
 
@@ -642,15 +643,15 @@ L3 programming layer <2025-03-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 37744 strings out of 471564
- 978044 string characters out of 5520713
+ 37742 strings out of 471564
+ 977986 string characters out of 5520713
  1549645 words of memory out of 5000000
- 63956 multiletter control sequences out of 15000+600000
+ 63954 multiletter control sequences out of 15000+600000
  638301 words of font info for 81 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,12n,105p,439b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ECE2001DP2.pdf (10 pages, 1134234 bytes).
+Output written on ECE2001DP2.pdf (10 pages, 1133503 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream

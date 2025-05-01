@@ -5,7 +5,7 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Bandwidth}{4}{}%
 \contentsline {subsubsection}{\numberline {3.1.2}Normalization}{4}{}%
 \contentsline {subsubsection}{\numberline {3.1.3}Cutoff Frequency}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Multiple-Feedback (MFB) Bandpass Filter}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Multiple-Feedback (MFB) Bandpass Filter}{4}{}%
 \contentsline {subsection}{\numberline {3.3}Bass Band}{6}{}%
 \contentsline {subsection}{\numberline {3.4}Midrange Band}{7}{}%
 \contentsline {subsection}{\numberline {3.5}Treble Band}{7}{}%
