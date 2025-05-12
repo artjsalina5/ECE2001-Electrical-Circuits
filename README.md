@@ -6,8 +6,8 @@ Welcome to the repository for **ECE 2001: Electrical Circuits**, a Spring 2025 c
 - **Title**: Electrical Circuits
 - **Credits**: 4
 - **Format**: Hybrid (asynchronous online lectures, synchronous in-person labs, synchronous in-person discussions)
-- **Instructor**: Dr. David J. Giblin ([david.giblin@uconn.edu](mailto:david.giblin@uconn.edu))
-- **Teaching Assistant**: Laxmi Vobbineni ([laxmi.vobbineni@uconn.edu](mailto:laxmi.vobbineni@uconn.edu))
+- **Instructor**: Dr. David J. Giblin ()
+- **Teaching Assistant**: Laxmi Vobbineni ()
 
 ---
 
@@ -37,8 +37,8 @@ Upon successful completion of this course, students will be able to:
    - ADALM 2000 (provided for lab use)
 
 ### Recommended Tools:
-- MATLAB ([access details](https://software.uconn.edu/software/matlab/))
 - PSpice (via AnyWare)
+- LTSpice
 
 ---
 
@@ -79,6 +79,7 @@ The course covers nine modules with accompanying laboratory experiments and prob
 - **Software**:
   - MATLAB
   - PSpice
+  - LTSpice
   - Analog Devices Scopy
   - Adobe Acrobat Reader
   - Access to high-speed internet
@@ -103,13 +104,6 @@ The course complies with [UConn accessibility standards](https://beyondaccess.cs
 ## How to Contribute
 
 Contributions to this repository are welcome, especially resources or tools that enhance understanding of the course material. Please ensure that contributions align with academic integrity policies.
-
----
-
-## Contact Information
-
-- **Instructor**: Dr. David J. Giblin ([david.giblin@uconn.edu](mailto:david.giblin@uconn.edu))
-- **UTA**: Laxmi Vobbineni ([laxmi.vobbineni@uconn.edu](mailto:laxmi.vobbineni@uconn.edu))
 
 ---
 
